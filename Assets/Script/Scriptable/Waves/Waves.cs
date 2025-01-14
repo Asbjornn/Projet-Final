@@ -1,7 +1,8 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Waves", menuName = "Scriptable Objects/Waves")]
+[CreateAssetMenu(fileName = "Wave", menuName = "Scriptable Objects/Wave")]
 public class Waves : ScriptableObject
 {
-    public int waveInterval;
+    public float waveInterval;
+    public int waveTime;
 }

@@ -1,6 +1,8 @@
 using UnityEngine;
 using System.Collections.Generic;
 using TMPro;
+using System.Collections;
+using Unity.VisualScripting;
 
 public class SpawnerContinuous : MonoBehaviour
 {
@@ -18,6 +20,8 @@ public class SpawnerContinuous : MonoBehaviour
 
     [Header("Others")]
     public Transform player;
+    public GameObject cross;
+    public WaveManager waveManager;
 
     [Header("List")]
     public List<GameObject> enemies;
@@ -26,9 +30,10 @@ public class SpawnerContinuous : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        spawnTimer = spawnInterval;
-        waveID++;
-        textNumberWave.text = $"Vague {waveID}";
+        waveID = 0;
+        textNumberWave.text = $"Vague {waveID + 1}";
+        waveTimer = waveManager.waves[waveID].waveTime;
+        spawnInterval = waveManager.waves[waveID].waveInterval;
     }
 
     // Update is called once per frame
@@ -39,14 +44,14 @@ public class SpawnerContinuous : MonoBehaviour
             waveTimer -= Time.deltaTime;
             CheckIfNull();
 
-            if (spawnTimer < 0)
+            if (spawnInterval < 0)
             {
-                SpawnEnemies(1);
-                spawnTimer = spawnInterval;
+                StartCoroutine(SpawnEnemy(1));
+                spawnInterval = waveManager.waves[waveID].waveInterval;
             }
             else
             {
-                spawnTimer -= Time.deltaTime;
+                spawnInterval -= Time.deltaTime;
             }
         }
         else
@@ -55,14 +60,24 @@ public class SpawnerContinuous : MonoBehaviour
         }
     }
 
+    public IEnumerator SpawnEnemy(int number)
+    {
+        Vector2 randomPos = new Vector2(Random.Range(-sizeSpawn.x / 2, sizeSpawn.x / 2), Random.Range(-sizeSpawn.y / 2, sizeSpawn.y / 2));
+        GameObject newCross = Instantiate(cross, randomPos, Quaternion.identity);
+        yield return new WaitForSeconds(0.83f);
+        int randomID = Random.Range(0, enemies.Count - number);
+        GameObject newEnemy = Instantiate(enemies[randomID], newCross.transform.position, Quaternion.identity);
+        enemiesSpawned.Add(newEnemy);
+        Destroy(newCross);
+    }
 
-    public void SpawnEnemies(int number)
+    /*public void SpawnEnemies(int number)
     {
         int randomID = Random.Range(0, enemies.Count - number);
         Vector2 randomPos = new Vector2(Random.Range(-sizeSpawn.x/2, sizeSpawn.x/2), Random.Range(-sizeSpawn.y / 2, sizeSpawn.y / 2));
         GameObject newEnemy = Instantiate(enemies[randomID], randomPos, Quaternion.identity);
         enemiesSpawned.Add(newEnemy);
-    }
+    }*/
 
     public void WaveEnd()
     {
@@ -83,9 +98,9 @@ public class SpawnerContinuous : MonoBehaviour
     public void NextWave()
     {
         waveID++;
-        textNumberWave.text = $"Vague {waveID}";
+        textNumberWave.text = $"Vague {waveID + 1}";
         player.position = new Vector3(0,0,0);
-        waveTimer = 10;
+        waveTimer = waveManager.waves[waveID].waveTime;
     }
 
     public void CheckIfNull()

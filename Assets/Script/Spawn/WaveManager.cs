@@ -7,6 +7,7 @@ public class WaveManager : MonoBehaviour
 
     public List<GameObject> environements;
     public List<GameObject> environementNotPicked;
+    public List<Waves> waves;
 
     public bool newEnvironement = false;
 

@@ -9,5 +9,6 @@ public class Bullet : MonoBehaviour
     void Start()
     {
         rb.linearVelocity = transform.right * speed;
+        Destroy(gameObject, 3f);
     }
 }

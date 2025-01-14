@@ -27,7 +27,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void UpdateHealth()
     {
-        textLife.text = $"{stats.currentHealth}";
+        textLife.text = $"{stats.currentHealth} PV";
         healthSlider.value = stats.currentHealth;
     }
 }
