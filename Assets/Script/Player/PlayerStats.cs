@@ -26,4 +26,9 @@ public class PlayerStats : MonoBehaviour
 
         currentHealth = maxHealth;
     }
+
+    public void TakeDamage(int amount)
+    {
+        currentHealth -= amount;
+    }
 }
