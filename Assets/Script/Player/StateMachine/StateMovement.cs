@@ -8,13 +8,11 @@ public class StateMovement : State
     {
         machine.currentSpeed = machine.playerStats.movementSpeed;
         machine.animator.SetBool("Walk", true);
-        Debug.Log("Enter State Movement");
     }
 
     public override void OnExit()
     {
         machine.animator.SetBool("Walk", false);
-        Debug.Log("Exit State Movement");
     }
 
     public override void OnFixedUpdate()

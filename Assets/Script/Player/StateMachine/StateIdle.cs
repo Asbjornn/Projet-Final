@@ -8,13 +8,11 @@ public class StateIdle : State
     {
         machine.currentSpeed = 0;
         machine.animator.SetBool("Idle", true);
-        Debug.Log("Enter State Idle");
     }
 
     public override void OnExit()
     {
         machine.animator.SetBool("Idle", false);
-        Debug.Log("Exit State Idle");
     }
 
     public override void OnFixedUpdate()

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3654422163749701030}
   - component: {fileID: 4594302011729143837}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84,7 +84,7 @@ GameObject:
   - component: {fileID: 6553504819057447484}
   - component: {fileID: 4730338321954328710}
   - component: {fileID: 5670165993169725221}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Slime
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -176,6 +176,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 4916847964694976085}
   player: {fileID: 0}
+  spriteRenderer: {fileID: 1782842572086529487}
   speed: 1
   damage: 1
 --- !u!50 &4916847964694976085

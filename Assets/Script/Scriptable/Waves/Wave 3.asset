@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Wave 3
   m_EditorClassIdentifier: 
   waveInterval: 1.6
+  waveTime: 45

@@ -15,16 +15,25 @@ public class StateMachine : MonoBehaviour
     public SpriteRenderer spriteRenderer;
     public Vector2 direction;
 
+    [Space(10)]
     [Header("PlayerData")]
     public float currentSpeed;
 
+    [Space(10)]
     [Header("Scripts")]
     public PlayerStats playerStats;
 
+    [Space(10)]
     [Header("Bools")]
     public bool isWalking;
     public bool isShooting;
 
+    [Space(10)]
+    [Header("Detection")]
+    public float range;
+
+    [Space(10)]
+    [Header("UI")]
     public TextMeshProUGUI textCurrentState;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -43,6 +52,12 @@ public class StateMachine : MonoBehaviour
     {
         currentState.OnUpdate();
         textCurrentState.text = currentState.ToString();
+
+        Collider2D col = Physics2D.OverlapCircle(transform.position, range);
+        if (col.CompareTag("Cross"))
+        {
+
+        }
     }
 
     private void FixedUpdate()
@@ -77,7 +92,13 @@ public class StateMachine : MonoBehaviour
         }
     }
 
-#region inputAction
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.grey;
+        Gizmos.DrawWireSphere(transform.position, range);
+    }
+
+    #region inputAction
     public void Movement(InputAction.CallbackContext context)
     {
         switch(context.phase)

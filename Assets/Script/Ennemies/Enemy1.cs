@@ -4,6 +4,7 @@ public class Enemy1 : MonoBehaviour
 {
     public Rigidbody2D rb;
     public Transform player;
+    public SpriteRenderer spriteRenderer;
     public float speed;
     public int damage;
 
@@ -12,9 +13,27 @@ public class Enemy1 : MonoBehaviour
         player = GameObject.Find("Player").transform;
     }
 
+    private void Update()
+    {
+        Flip();
+    }
+
     private void FixedUpdate()
     {
         rb.linearVelocity = (player.position - transform.position).normalized * speed;
+    }
+
+    public void Flip()
+    {
+        Vector2 direction = player.position - transform.position;
+        if (direction.x > 0)
+        {
+            spriteRenderer.flipX = true;
+        }
+        else
+        {
+            spriteRenderer.flipX = false;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

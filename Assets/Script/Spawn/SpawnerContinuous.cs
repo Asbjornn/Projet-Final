@@ -46,7 +46,15 @@ public class SpawnerContinuous : MonoBehaviour
 
             if (spawnInterval < 0)
             {
-                StartCoroutine(SpawnEnemy(1));
+                if(waveID % 3 == 0 || waveID % 4 == 0 || waveID % 5 == 0 && waveID !=0)
+                {
+                    StartCoroutine(SpawnEnemy(0));
+                }
+                else
+                {
+                    StartCoroutine(SpawnEnemy(1));
+                }
+                
                 spawnInterval = waveManager.waves[waveID].waveInterval;
             }
             else
@@ -81,7 +89,7 @@ public class SpawnerContinuous : MonoBehaviour
 
     public void WaveEnd()
     {
-        titleUIPannel.text = $"Vague {waveID} finie";
+        titleUIPannel.text = $"Vague {waveID + 1} finie";
 
         waveUI.SetActive(true);
 
