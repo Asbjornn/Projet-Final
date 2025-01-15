@@ -28,11 +28,11 @@ public class Enemy1 : MonoBehaviour
         Vector2 direction = player.position - transform.position;
         if (direction.x > 0)
         {
-            spriteRenderer.flipX = true;
+            spriteRenderer.flipX = false;
         }
         else
         {
-            spriteRenderer.flipX = false;
+            spriteRenderer.flipX = true;
         }
     }
 

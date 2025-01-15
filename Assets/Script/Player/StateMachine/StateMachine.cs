@@ -36,10 +36,15 @@ public class StateMachine : MonoBehaviour
     [Header("UI")]
     public TextMeshProUGUI textCurrentState;
 
+    private void Awake()
+    {
+        playerStats.InitialiseStats();
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        playerStats.InitialiseStats();
+        
 
         _state.Add(nameof(StateIdle), new StateIdle(this));
         _state.Add(nameof(StateMovement), new StateMovement(this));
