@@ -44,8 +44,6 @@ public class StateMachine : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
-
         _state.Add(nameof(StateIdle), new StateIdle(this));
         _state.Add(nameof(StateMovement), new StateMovement(this));
 

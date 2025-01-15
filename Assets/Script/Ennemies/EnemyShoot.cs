@@ -4,6 +4,7 @@ public class EnemyShoot : MonoBehaviour
 {
     public Rigidbody2D rb;
     public Animator animator;
+    public GameObject fragment;
     public Transform player;
     public float speed;
     public int damageClose;
@@ -100,6 +101,11 @@ public class EnemyShoot : MonoBehaviour
         {
             rb.linearVelocity = Vector2.zero;   
         }
+    }
+
+    private void OnDestroy()
+    {
+        Instantiate(fragment, transform.position, Quaternion.identity);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

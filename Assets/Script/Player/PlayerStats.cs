@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using System.Collections.Generic;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -7,14 +8,14 @@ public class PlayerStats : MonoBehaviour
     public Animator animator;
 
     [Header("Stats")]
-    public int maxHealth;
-    public int currentHealth;
-    public int degatPourcentage;
-    public int degatBrut;
-    public int vitesseAttaque;
-    public int portee;
-    public int armure;
-    public int movementSpeed;
+    public float maxHealth;
+    public float currentHealth;
+    public float damagePercentage;
+    public float damageBrut;
+    public float attackSpeed;
+    public float range;
+    public float armor;
+    public float movementSpeed;
 
     [Space(5)]
     [Header("----------------------------------------------------------------")]
@@ -22,12 +23,19 @@ public class PlayerStats : MonoBehaviour
     [Header("Stats UI")]
     public TextMeshProUGUI maxHealthUI;
     //public TextMeshProUGUI currentHealthUI;
-    public TextMeshProUGUI degatPourcentageUI;
-    public TextMeshProUGUI degatBrutUI;
-    public TextMeshProUGUI vitesseAttaqueUI;
-    public TextMeshProUGUI porteeUI;
-    public TextMeshProUGUI armureUI;
+    public TextMeshProUGUI damagePercentageUI;
+    public TextMeshProUGUI damageBrutUI;
+    public TextMeshProUGUI attackSpeedUI;
+    public TextMeshProUGUI rangeUI;
+    public TextMeshProUGUI armorUI;
     public TextMeshProUGUI movementSpeedUI;
+
+    [Space(5)]
+    [Header("----------------------------------------------------------------")]
+    [Space(5)]
+    [Header("Scipt for stat")]
+    public Shoot shootScript;
+    public PlayerHealth health;
 
     public void Update()
     {
@@ -38,11 +46,11 @@ public class PlayerStats : MonoBehaviour
     {
         maxHealth = currentCharacter.maxHealth;
         currentHealth = currentCharacter.currentHealth;
-        degatPourcentage = currentCharacter.degatPourcentage;
-        degatBrut = currentCharacter.degatBrut;
-        vitesseAttaque = currentCharacter.vitesseAttaque;
-        portee = currentCharacter.portee;
-        armure = currentCharacter.armure;   
+        damagePercentage = currentCharacter.damagePercentage;
+        damageBrut = currentCharacter.damageBrut;
+        attackSpeed = currentCharacter.attackSpeed;
+        range = currentCharacter.range;
+        armor = currentCharacter.armor;   
         movementSpeed = currentCharacter.movementSpeed;
 
         currentHealth = maxHealth;
@@ -51,17 +59,52 @@ public class PlayerStats : MonoBehaviour
     public void UpdateStatsUI()
     {
         maxHealthUI.text = $"Max Health {maxHealth}";
-        degatPourcentageUI.text = $"Damage % {degatPourcentage}";
-        degatBrutUI.text = $"Damage Brut {degatBrut}";
-        vitesseAttaqueUI.text = $"Attack Speed {vitesseAttaque}";
-        porteeUI.text = $"Range {portee}";
-        armureUI.text = $"Armor {armure}";
+        damagePercentageUI.text = $"Damage % {damagePercentage}";
+        damageBrutUI.text = $"Damage Brut {damageBrut}";
+        attackSpeedUI.text = $"Attack Speed {attackSpeed}";
+        rangeUI.text = $"Range {range}";
+        armorUI.text = $"Armor {armor}";
         movementSpeedUI.text = $"Move Speed {movementSpeed}";
     }
 
-    public void TakeDamage(int amount)
+    public void TakeDamage(float amount)
     {
         animator.SetTrigger("Hurt");
-        currentHealth -= amount;
+        currentHealth -= amount - armor;
+    }
+
+    public void UpdateStat(string statName, float value)
+    {
+        switch(statName)
+        {
+            case "maxHealth":
+                maxHealth += value;
+                health.AddHealth(value);
+                break;
+            case "damagePercentage":
+                damagePercentage += value;
+                //shootScript.AddStat("damagePercentage", value);
+                break;
+            case "damageBrut":
+                damageBrut += value;
+                //shootScript.AddStat("damageBrut", value);
+                break;
+            case "attackSpeed":
+                attackSpeed += value;
+                //shootScript.AddStat("attackSpeed", value);
+                break;
+            case "range":
+                range += value;
+                //shootScript.AddStat("range", value);
+                break;
+            case "armor":
+                armor += value;
+                break;
+            case "movementSpeed":
+                movementSpeed += value;
+                break;
+            default:
+                break;
+        }
     }
 }

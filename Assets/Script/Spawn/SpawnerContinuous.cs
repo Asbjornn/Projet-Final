@@ -64,7 +64,11 @@ public class SpawnerContinuous : MonoBehaviour
         }
         else
         {
-            WaveEnd();
+            if(!waveManager.waveEnd)
+            {
+                waveManager.endWaveEvent.Invoke();
+                waveManager.waveEnd = true;
+            }
         }
     }
 
@@ -91,7 +95,7 @@ public class SpawnerContinuous : MonoBehaviour
     {
         titleUIPannel.text = $"Vague {waveID + 1} finie";
 
-        waveUI.SetActive(true);
+        //waveUI.SetActive(true);
 
         foreach(GameObject ene in enemiesSpawned)
         {
@@ -108,6 +112,7 @@ public class SpawnerContinuous : MonoBehaviour
         waveID++;
         textNumberWave.text = $"Vague {waveID + 1}";
         player.position = new Vector3(0,0,0);
+        waveManager.waveEnd = false;
         waveTimer = waveManager.waves[waveID].waveTime;
     }
 

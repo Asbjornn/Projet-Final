@@ -179,6 +179,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 1782842572086529487}
   speed: 1
   damage: 1
+  fragment: {fileID: 2215251955009714210, guid: 005b9f9dbab9ac64ab7c36691987665f, type: 3}
 --- !u!50 &4916847964694976085
 Rigidbody2D:
   serializedVersion: 5

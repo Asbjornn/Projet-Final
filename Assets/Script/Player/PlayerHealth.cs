@@ -30,4 +30,10 @@ public class PlayerHealth : MonoBehaviour
         textLife.text = $"{stats.currentHealth} PV";
         healthSlider.value = stats.currentHealth;
     }
+
+    public void AddHealth(float amount)
+    {
+        healthSlider.maxValue = stats.maxHealth;
+        healthSlider.value += amount;
+    }
 }

@@ -6,7 +6,6 @@ public class StateMovement : State
 
     public override void OnEnter()
     {
-        machine.currentSpeed = machine.playerStats.movementSpeed;
         machine.animator.SetBool("Walk", true);
     }
 
@@ -17,7 +16,7 @@ public class StateMovement : State
 
     public override void OnFixedUpdate()
     {
-        machine.rb.linearVelocity = machine.direction * machine.currentSpeed;
+        machine.rb.linearVelocity = machine.direction * machine.playerStats.movementSpeed;
     }
 
     public override void OnTriggerEnter(Collider2D collision)

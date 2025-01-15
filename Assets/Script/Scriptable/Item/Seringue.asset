@@ -17,6 +17,5 @@ MonoBehaviour:
   itemEffect: 'Vitesse d''attaque : +15%'
   description: Une seringue probablement dangereuse
   price: 10
-  allStatItem:
-  - statName: AttackSpeed
-    givenStat: 15
+  statName: attackSpeed
+  givenStat: 15

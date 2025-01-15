@@ -15,8 +15,7 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 208331542b5bc3346b05b60c0d465293, type: 3}
   nameItem: Potion de vie
   itemEffect: 'Vie : +5'
-  description: "Une potion qui m'a l'air tout \xE0 fait appaitissante"
+  description: "Une potion qui m'\xE0 l'air tout \xE0 fait app\xE9tissante"
   price: 10
-  allStatItem:
-  - statName: MaxHealth
-    givenStat: 5
+  statName: maxHealth
+  givenStat: 5

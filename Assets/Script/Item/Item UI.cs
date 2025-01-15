@@ -11,8 +11,7 @@ public class ItemUI : MonoBehaviour
     public TextMeshProUGUI descriptionItem;
     public TextMeshProUGUI priceItem;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void Start()
     {
         InitialiseItem();
     }
@@ -20,7 +19,7 @@ public class ItemUI : MonoBehaviour
     public void InitialiseItem()
     {
         image.sprite = choosenItem.sprite;
-        nameItem.text = choosenItem.name;
+        nameItem.text = choosenItem.nameItem;
         statsItem.text = choosenItem.itemEffect;
         descriptionItem.text = choosenItem.description;
         priceItem.text = $"{choosenItem.price}";

@@ -1,20 +1,29 @@
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.Events;
 
 public class WaveManager : MonoBehaviour
 {
+    [Header("Script")]
     public SpawnerContinuous spawner;
 
+    [Header("List")]
     public List<GameObject> environements;
     public List<GameObject> environementNotPicked;
     public List<Waves> waves;
 
+    [Header("Bool")]
     public bool newEnvironement = false;
+    public bool waveEnd = false;
+
+    [Header("Events")]
+    public UnityEvent endWaveEvent;
+    public UnityEvent newWaveEvent;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        environementNotPicked = environements;
+        environementNotPicked = new List<GameObject>(environements);
     }
 
     // Update is called once per frame

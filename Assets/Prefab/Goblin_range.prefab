@@ -203,7 +203,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 5235918169552808150}
   animator: {fileID: 6210906154600637559}
-  spriteRenderer: {fileID: 8865622401436930519}
+  fragment: {fileID: 2215251955009714210, guid: 005b9f9dbab9ac64ab7c36691987665f, type: 3}
   player: {fileID: 0}
   speed: 1.2
   damageClose: 1

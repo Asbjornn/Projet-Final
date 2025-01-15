@@ -4,19 +4,20 @@ using UnityEngine;
 public class Shoot : MonoBehaviour
 {
     public FindNearestEnemy findNearestEnemy;
+    public PlayerStats playerStats;
 
     public GameObject bullet;
     public Transform shootPoint;
     public float reloadTime;
-    public bool reload;
     public float range;
+    public bool reload;
 
     public float damageBullet;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        playerStats = GameObject.Find("Stats").GetComponent<PlayerStats>();
     }
 
     // Update is called once per frame
@@ -32,8 +33,8 @@ public class Shoot : MonoBehaviour
     {
         reload = true;
         GameObject bul = Instantiate(bullet, shootPoint.position, transform.rotation);
-        bul.GetComponent<Damage>().damage = damageBullet;
-        yield return new WaitForSeconds(reloadTime);
+        bul.GetComponent<Damage>().damage = damageBullet + playerStats.damageBrut + playerStats.damagePercentage;
+        yield return new WaitForSeconds(reloadTime + playerStats.attackSpeed);
         if (findNearestEnemy.nearestTarget != null)
         {
             reload = false;
@@ -46,9 +47,30 @@ public class Shoot : MonoBehaviour
         }
     }
 
-    private void OnDrawGizmos()
+    public void AddStat(string statName, float amount)
+    {
+        switch(statName)
+        {
+            case "range":
+                range += amount;
+                break;
+            case "reloadTime":
+                reloadTime += amount;
+                break;
+            case "damagePercentage":
+                damageBullet *= amount;
+                break;
+            case "damageBrut":
+                damageBullet += amount;
+                break;
+            default:
+                break;
+        }
+    }
+
+    /*private void OnDrawGizmos()
     {
         Gizmos.color = Color.white;
-        Gizmos.DrawWireSphere(shootPoint.position, range);
-    }
+        Gizmos.DrawWireSphere(shootPoint.position, findNearestEnemy.miniDistance);
+    }*/
 }

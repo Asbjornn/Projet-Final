@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8300016892611912996}
   - component: {fileID: 7961246122349390665}
   - component: {fileID: 8871101868485656743}
+  - component: {fileID: 5526434930607852388}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -120,7 +121,33 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7961246122349390665}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5526434930607852388}
+        m_TargetAssemblyTypeName: ReturnItem, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &5526434930607852388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 624948262093450302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd2e5ec0ead8e9940ac9befa295a4d4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemUI: {fileID: 6612705910782623336}
+  pannelShop: {fileID: 0}
 --- !u!1 &2354889163454710509
 GameObject:
   m_ObjectHideFlags: 0
@@ -155,8 +182,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 31.7751, y: 75.8}
-  m_SizeDelta: {x: 63.5493, y: 23.9847}
+  m_AnchoredPosition: {x: 29.037, y: 77}
+  m_SizeDelta: {x: 69.024, y: 23.9847}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6577130067029032093
 CanvasRenderer:
@@ -213,8 +240,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 13.5
-  m_fontSizeBase: 13.5
+  m_fontSize: 10.8
+  m_fontSizeBase: 10.8
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

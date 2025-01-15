@@ -7,6 +7,7 @@ public class Enemy1 : MonoBehaviour
     public SpriteRenderer spriteRenderer;
     public float speed;
     public int damage;
+    public GameObject fragment;
 
     void Start()
     {
@@ -34,6 +35,11 @@ public class Enemy1 : MonoBehaviour
         {
             spriteRenderer.flipX = true;
         }
+    }
+
+    private void OnDestroy()
+    {
+        Instantiate(fragment, transform.position, Quaternion.identity);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

@@ -13,10 +13,9 @@ MonoBehaviour:
   m_Name: Jumelle
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: bdf26caa71adc9747a33c008399d6fbe, type: 3}
-  nameItem: Jumelle
+  nameItem: Jumelles
   itemEffect: "Port\xE9e : +20"
   description: "Des jumelles d'exeption qui permettent m\xEAme de voir les oiseaux"
   price: 10
-  allStatItem:
-  - statName: Range
-    givenStat: 20
+  statName: range
+  givenStat: 20

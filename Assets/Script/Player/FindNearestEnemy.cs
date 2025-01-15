@@ -9,6 +9,7 @@ public class FindNearestEnemy : MonoBehaviour
     public Rigidbody2D rb;
     public SpriteRenderer sprite;
 
+    public float miniDistance;
     float chrono;
 
     // Update is called once per frame
@@ -41,9 +42,10 @@ public class FindNearestEnemy : MonoBehaviour
     {
         Transform target = null;
         float distance = 0;
-        float miniDistance = shoot.range;
+        miniDistance = shoot.range + playerStats.range;
+        
 
-        foreach(GameObject targets in spawnerContinuous.enemiesSpawned)
+        foreach (GameObject targets in spawnerContinuous.enemiesSpawned)
         {
             if(targets != null)
             {
@@ -72,5 +74,11 @@ public class FindNearestEnemy : MonoBehaviour
         {
             sprite.flipY = false;
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.white;
+        Gizmos.DrawWireSphere(transform.position, miniDistance);
     }
 }

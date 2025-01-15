@@ -9,12 +9,6 @@ public class Item : ScriptableObject
     public string itemEffect;
     public string description;
     public int price;
-    public List<ItemStat> allStatItem;
-}
-
-[System.Serializable]
-public class ItemStat
-{
     public string statName;
-    public int givenStat;
+    public float givenStat;
 }
