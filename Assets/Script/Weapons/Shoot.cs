@@ -47,27 +47,6 @@ public class Shoot : MonoBehaviour
         }
     }
 
-    public void AddStat(string statName, float amount)
-    {
-        switch(statName)
-        {
-            case "range":
-                range += amount;
-                break;
-            case "reloadTime":
-                reloadTime += amount;
-                break;
-            case "damagePercentage":
-                damageBullet *= amount;
-                break;
-            case "damageBrut":
-                damageBullet += amount;
-                break;
-            default:
-                break;
-        }
-    }
-
     /*private void OnDrawGizmos()
     {
         Gizmos.color = Color.white;

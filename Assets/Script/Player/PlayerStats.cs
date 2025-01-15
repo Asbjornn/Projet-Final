@@ -83,19 +83,15 @@ public class PlayerStats : MonoBehaviour
                 break;
             case "damagePercentage":
                 damagePercentage += value;
-                //shootScript.AddStat("damagePercentage", value);
                 break;
             case "damageBrut":
                 damageBrut += value;
-                //shootScript.AddStat("damageBrut", value);
                 break;
             case "attackSpeed":
                 attackSpeed += value;
-                //shootScript.AddStat("attackSpeed", value);
                 break;
             case "range":
                 range += value;
-                //shootScript.AddStat("range", value);
                 break;
             case "armor":
                 armor += value;
