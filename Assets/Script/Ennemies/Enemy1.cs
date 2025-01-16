@@ -4,10 +4,10 @@ public class Enemy1 : MonoBehaviour
 {
     public Rigidbody2D rb;
     public Transform player;
+    public EnemyHealth health;
     public SpriteRenderer spriteRenderer;
     public float speed;
     public int damage;
-    public GameObject fragment;
 
     void Start()
     {
@@ -37,11 +37,6 @@ public class Enemy1 : MonoBehaviour
         }
     }
 
-    private void OnDestroy()
-    {
-        Instantiate(fragment, transform.position, Quaternion.identity);
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.CompareTag("Player"))
@@ -49,7 +44,7 @@ public class Enemy1 : MonoBehaviour
             print("je detecte collision");
             PlayerStats stats = GameObject.Find("Stats").GetComponent<PlayerStats>();
             stats.TakeDamage(damage);
-            Destroy(gameObject);
+            health.EnemyDie();
         }
     }
 }

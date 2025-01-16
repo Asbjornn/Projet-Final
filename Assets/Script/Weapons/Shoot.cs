@@ -14,13 +14,11 @@ public class Shoot : MonoBehaviour
 
     public float damageBullet;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         playerStats = GameObject.Find("Stats").GetComponent<PlayerStats>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if(findNearestEnemy.nearestTarget != null && !reload)

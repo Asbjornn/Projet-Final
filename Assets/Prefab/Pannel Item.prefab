@@ -148,6 +148,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemUI: {fileID: 6612705910782623336}
   pannelShop: {fileID: 0}
+  button: {fileID: 8871101868485656743}
 --- !u!1 &2354889163454710509
 GameObject:
   m_ObjectHideFlags: 0

@@ -59,7 +59,7 @@ public class StateMachine : MonoBehaviour
         Collider2D col = Physics2D.OverlapCircle(transform.position, range);
         if (col.CompareTag("Cross"))
         {
-
+            CancelSpawn(col.gameObject);
         }
     }
 
@@ -75,9 +75,18 @@ public class StateMachine : MonoBehaviour
         currentState.OnEnter();
     }
 
-    public void OnTriggerEnter2D(Collider2D other)
+    public void CancelSpawn(GameObject cross)
     {
-        currentState.OnTriggerEnter(other);
+        float chrono = 0;
+        if(chrono > 0.4f)
+        {
+            Destroy(cross);
+            chrono = 0;
+        }
+        else
+        {
+            chrono += Time.deltaTime;
+        }
     }
 
     public void Flip()
@@ -93,6 +102,11 @@ public class StateMachine : MonoBehaviour
                 spriteRenderer.flipX = false;
             }
         }
+    }
+
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        currentState.OnTriggerEnter(other);
     }
 
     private void OnDrawGizmos()

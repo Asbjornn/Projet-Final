@@ -43,17 +43,12 @@ public class FindNearestEnemy : MonoBehaviour
         Transform target = null;
         float distance = 0;
         miniDistance = shoot.range + playerStats.range;
-        
 
         foreach (GameObject targets in spawnerContinuous.enemiesSpawned)
         {
             if(targets != null)
             {
                 distance = Vector2.Distance(transform.position, targets.transform.position);
-                if(transform.rotation.z > 180)
-                {
-                    print("RETOURNER");
-                }
             }
             if(distance < miniDistance)
             {

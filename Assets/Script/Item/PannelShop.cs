@@ -1,6 +1,8 @@
 using UnityEngine;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEngine.UI;
+using TMPro;
 
 public class PannelShop : MonoBehaviour
 {
@@ -16,12 +18,17 @@ public class PannelShop : MonoBehaviour
     public PlayerInventory playerInventory;
     public PlayerStats playerStats;
 
+    [Header("Reroll")]
+    public Button rerollButton;
+    public TextMeshProUGUI textRerollButton;
+    public bool canReroll;
+    public int priceReroll;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        //itemInShop = items;
+
         InitialiseShop();
-        RerollShop();
     }
 
     public void InitialiseShop()
@@ -31,15 +38,35 @@ public class PannelShop : MonoBehaviour
             GameObject newPannel = Instantiate(pannelPrefab, transform.GetChild(i).transform.position, Quaternion.identity, transform.GetChild(i));
             createdPannel.Add(newPannel);
         }
+
+        UpdateShop();
+    }
+
+    private void Update()
+    {
+        textRerollButton.text = $"REROLL : {priceReroll}";
+        if((playerInventory.monsterFragments - priceReroll) >= 0)
+        {
+            canReroll = true;
+            rerollButton.interactable = true;
+        }
+        else
+        {
+            canReroll = false;
+            rerollButton.interactable = false;
+        }
     }
 
     public void UpdateShop()
     {
+        itemInShop = new List<Item>(items);
+
         foreach (GameObject pannel in createdPannel)
         {
             int randomID = Random.Range(0, itemInShop.Count);
             ItemUI itemUI = pannel.GetComponent<ItemUI>();
             itemUI.choosenItem = itemInShop[randomID];
+            pannel.transform.GetChild(4).GetComponent<Button>().interactable = true;
             itemUI.InitialiseItem();
             itemInShop.RemoveAt(randomID);
         }
@@ -47,17 +74,26 @@ public class PannelShop : MonoBehaviour
 
     public void RerollShop()
     {
-        itemInShop = new List<Item>(items);
-        UpdateShop();
+        if(canReroll)
+        {
+            playerInventory.BuyWithMonsterFragment(priceReroll);
+            priceReroll += 2;
+            UpdateShop();
+        }
     }
 
-    public void BuyItem(Item item)
+    public void ResetPriceShop()
+    {
+        priceReroll = 2;
+    }
+
+    public void BuyItem(Item item, Button button)
     {
         if(playerInventory.monsterFragments - item.price >= 0)
         {
-            playerInventory.monsterFragments -= item.price;
-            playerInventory.UpdateUIMonsterFragment();
+            playerInventory.BuyWithMonsterFragment(item.price);
             playerStats.UpdateStat(item.statName, item.givenStat);
+            button.interactable = false;
         }
         else
         {

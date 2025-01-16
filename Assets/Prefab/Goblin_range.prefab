@@ -203,7 +203,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 5235918169552808150}
   animator: {fileID: 6210906154600637559}
-  fragment: {fileID: 2215251955009714210, guid: 005b9f9dbab9ac64ab7c36691987665f, type: 3}
+  health: {fileID: 4860225511032590925}
   player: {fileID: 0}
   speed: 1.2
   damageClose: 1
@@ -229,6 +229,7 @@ MonoBehaviour:
   maxHealth: 5
   currentHealth: 0
   animator: {fileID: 6210906154600637559}
+  fragment: {fileID: 2215251955009714210, guid: 005b9f9dbab9ac64ab7c36691987665f, type: 3}
 --- !u!95 &6210906154600637559
 Animator:
   serializedVersion: 7

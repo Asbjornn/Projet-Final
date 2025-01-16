@@ -4,7 +4,7 @@ public class EnemyShoot : MonoBehaviour
 {
     public Rigidbody2D rb;
     public Animator animator;
-    public GameObject fragment;
+    public EnemyHealth health;
     public Transform player;
     public float speed;
     public int damageClose;
@@ -103,11 +103,6 @@ public class EnemyShoot : MonoBehaviour
         }
     }
 
-    private void OnDestroy()
-    {
-        Instantiate(fragment, transform.position, Quaternion.identity);
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
@@ -115,7 +110,7 @@ public class EnemyShoot : MonoBehaviour
             print("je detecte collision");
             PlayerStats stats = GameObject.Find("Stats").GetComponent<PlayerStats>();
             stats.TakeDamage(damageClose);
-            Destroy(gameObject);
+            health.EnemyDie();
         }
     }
 

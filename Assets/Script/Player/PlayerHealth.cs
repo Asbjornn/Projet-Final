@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
@@ -7,6 +8,7 @@ public class PlayerHealth : MonoBehaviour
     public PlayerStats stats;
     public Slider healthSlider;
     public TextMeshProUGUI textLife;
+    public UnityEvent eventDie;
 
     private void Start()
     {
@@ -18,10 +20,11 @@ public class PlayerHealth : MonoBehaviour
     void Update()
     {
         UpdateHealth(); 
+
         if (stats.currentHealth <= 0)
         {
             print("Meurt");
-            //Die();
+            Die();
         }
     }
 
@@ -34,6 +37,11 @@ public class PlayerHealth : MonoBehaviour
     public void AddHealth(float amount)
     {
         healthSlider.maxValue = stats.maxHealth;
-        healthSlider.value += amount;
+        stats.currentHealth += amount;
+    }
+
+    public void Die()
+    {
+        eventDie.Invoke();
     }
 }

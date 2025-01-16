@@ -30,4 +30,10 @@ public class PlayerInventory : MonoBehaviour
     {
         monsterFragmentsAmount.text = $"{monsterFragments} fragments";
     }
+
+    public void BuyWithMonsterFragment(int amount)
+    {
+        monsterFragments -= amount;
+        UpdateUIMonsterFragment();
+    }
 }

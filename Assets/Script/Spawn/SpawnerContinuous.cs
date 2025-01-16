@@ -22,6 +22,7 @@ public class SpawnerContinuous : MonoBehaviour
     public Transform player;
     public GameObject cross;
     public WaveManager waveManager;
+    public FragmentManager fragmentManager;
 
     [Header("List")]
     public List<GameObject> enemies;
@@ -46,7 +47,7 @@ public class SpawnerContinuous : MonoBehaviour
 
             if (spawnInterval < 0)
             {
-                if(waveID % 3 == 0 || waveID % 4 == 0 || waveID % 5 == 0 && waveID !=0)
+                if((waveID % 2 == 0 || waveID % 3 == 0 || waveID % 4 == 0 || waveID % 5 == 0) && waveID != 0)
                 {
                     StartCoroutine(SpawnEnemy(0));
                 }
@@ -74,6 +75,10 @@ public class SpawnerContinuous : MonoBehaviour
 
     public IEnumerator SpawnEnemy(int number)
     {
+        //Instantie un croix à un endroit random
+        //attend la fin de son animation
+        //instantie un enemy à cette même position
+
         Vector2 randomPos = new Vector2(Random.Range(-sizeSpawn.x / 2, sizeSpawn.x / 2), Random.Range(-sizeSpawn.y / 2, sizeSpawn.y / 2));
         GameObject newCross = Instantiate(cross, randomPos, Quaternion.identity);
         yield return new WaitForSeconds(0.83f);
@@ -83,19 +88,13 @@ public class SpawnerContinuous : MonoBehaviour
         Destroy(newCross);
     }
 
-    /*public void SpawnEnemies(int number)
-    {
-        int randomID = Random.Range(0, enemies.Count - number);
-        Vector2 randomPos = new Vector2(Random.Range(-sizeSpawn.x/2, sizeSpawn.x/2), Random.Range(-sizeSpawn.y / 2, sizeSpawn.y / 2));
-        GameObject newEnemy = Instantiate(enemies[randomID], randomPos, Quaternion.identity);
-        enemiesSpawned.Add(newEnemy);
-    }*/
-
     public void WaveEnd()
     {
-        titleUIPannel.text = $"Vague {waveID + 1} finie";
+        //Actualise le texte pour le numéro de la wave
+        //Détruis tous les ennemis restant à la fin
+        //Détruis tous les fragments restant à la fin
 
-        //waveUI.SetActive(true);
+        titleUIPannel.text = $"Vague {waveID + 1} finie";
 
         foreach(GameObject ene in enemiesSpawned)
         {
@@ -103,12 +102,15 @@ public class SpawnerContinuous : MonoBehaviour
         }
         enemiesSpawned.Clear();
 
-        //Apparition écran entre les manches
-        //Récupération gold
+        fragmentManager.CleanArena();
     }
 
     public void NextWave()
     {
+        //imcrémente le nombre de vague
+        //replace le joueur au milieu
+        //reset le timer
+
         waveID++;
         textNumberWave.text = $"Vague {waveID + 1}";
         player.position = new Vector3(0,0,0);
@@ -118,6 +120,8 @@ public class SpawnerContinuous : MonoBehaviour
 
     public void CheckIfNull()
     {
+        //vérifie si il y a un élément vide dans la liste pour le retirer
+
         for(int i = 0; i < enemiesSpawned.Count; i++)
         {
             if( enemiesSpawned[i] == null )

@@ -5,6 +5,7 @@ public class EnemyHealth : MonoBehaviour
     public float maxHealth;
     public float currentHealth;
     public Animator animator;
+    public GameObject fragment;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -17,8 +18,14 @@ public class EnemyHealth : MonoBehaviour
     {
         if(currentHealth <= 0)
         {
-            Destroy(gameObject);
+            EnemyDie();
         }
+    }
+
+    public void EnemyDie()
+    {
+        Instantiate(fragment, transform.position, Quaternion.identity);
+        Destroy(gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

@@ -18,7 +18,7 @@ public class WaveManager : MonoBehaviour
 
     [Header("Events")]
     public UnityEvent endWaveEvent;
-    public UnityEvent newWaveEvent;
+    public UnityEvent nextWaveEvent;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -41,6 +41,9 @@ public class WaveManager : MonoBehaviour
 
     public void NewEnvironement()
     {
+        //Retire un environnement de la nouvelle liste
+        //pour choisir un aléatoirement parmis les restants
+
         newEnvironement = true;
         int id = 0;
         for(id = 0; id < environements.Count; id++)
@@ -54,5 +57,10 @@ public class WaveManager : MonoBehaviour
 
         int randomID = Random.Range(0, environementNotPicked.Count);
         environementNotPicked[randomID].SetActive(true);
+    }
+
+    public void NextWaveEvent()
+    {
+        nextWaveEvent.Invoke();
     }
 }
