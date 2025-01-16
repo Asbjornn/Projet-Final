@@ -8,15 +8,23 @@ public class Shoot : MonoBehaviour
 
     public GameObject bullet;
     public Transform shootPoint;
-    public float reloadTime;
-    public float range;
-    public bool reload;
 
+    [Header("WeaponData")]
+    public Item actualWeapon;
+    public SpriteRenderer spriteRenderer;
     public float damageBullet;
+    public float range;
+    public float reloadTime;
+
+    public bool reload;
 
     void Start()
     {
         playerStats = GameObject.Find("Stats").GetComponent<PlayerStats>();
+        for (int i = 0; i < actualWeapon.itemStats.Count; i++)
+        {
+            InitializeWeaponData(actualWeapon.itemStats[i].statName.ToString(), actualWeapon.itemStats[i].stat, actualWeapon);
+        }
     }
 
     void Update()
@@ -42,6 +50,27 @@ public class Shoot : MonoBehaviour
         {
             reload = false;
             yield break;
+        }
+    }
+
+    public void InitializeWeaponData(string statName, float statValue, Item weapon)
+    {
+        actualWeapon = weapon;
+        spriteRenderer.sprite = actualWeapon.sprite;
+
+        switch(statName)
+        {
+            case "damageBullet":
+                damageBullet = statValue;
+                break;
+            case "range":
+                range = statValue;
+                break;
+            case "reloadTime":
+                reloadTime = statValue; 
+                break;
+            default:
+                break;
         }
     }
 

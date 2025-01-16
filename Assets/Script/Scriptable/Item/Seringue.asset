@@ -19,3 +19,7 @@ MonoBehaviour:
   price: 10
   statName: attackSpeed
   givenStat: -0.15
+  itemStats:
+  - itemType: 0
+    statName: 8
+    stat: -0.15

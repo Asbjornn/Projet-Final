@@ -10,16 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a4b76bb7734eb7d4a96b537741f9b418, type: 3}
-  m_Name: Jumelle
+  m_Name: Rifle
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: bdf26caa71adc9747a33c008399d6fbe, type: 3}
-  nameItem: Jumelles
-  itemEffect: "Port\xE9e : +10"
-  description: "Des jumelles d'exeption qui permettent m\xEAme de voir les oiseaux"
-  price: 10
-  statName: range
-  givenStat: 1
+  sprite: {fileID: 4354231566380549168, guid: 50d0a67ce5615554aa1b77f6adc3e0b0, type: 3}
+  nameItem: Mitrapoulette
+  itemEffect: "D\xE9gat : 1 \\nPort\xE9e : 6 \\nRecharge : 0.2sec"
+  description: PoumPoum rapide
+  price: 25
+  statName: 
+  givenStat: 0
   itemStats:
-  - itemType: 0
-    statName: 4
+  - itemType: 1
+    statName: 7
     stat: 1
+  - itemType: 1
+    statName: 8
+    stat: 0.2
+  - itemType: 1
+    statName: 4
+    stat: 6

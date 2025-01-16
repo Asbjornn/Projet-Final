@@ -224,6 +224,7 @@ MonoBehaviour:
   nearestTarget: {fileID: 0}
   rb: {fileID: 1242014771433623247}
   sprite: {fileID: 1841083421520690762}
+  miniDistance: 0
 --- !u!114 &3117228514356186717
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -237,11 +238,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   findNearestEnemy: {fileID: 8584408256842929129}
+  playerStats: {fileID: 0}
   bullet: {fileID: 2339836613076349212, guid: 5c2cd824518897845be099130b92d218, type: 3}
   shootPoint: {fileID: 5787133405912091480}
   reloadTime: 1
-  reload: 0
   range: 6
+  reload: 0
   damageBullet: 3
 --- !u!50 &1242014771433623247
 Rigidbody2D:
@@ -637,11 +639,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   findNearestEnemy: {fileID: 8181865135046670262}
+  playerStats: {fileID: 0}
   bullet: {fileID: 2339836613076349212, guid: 5c2cd824518897845be099130b92d218, type: 3}
   shootPoint: {fileID: 7932363644764237400}
   reloadTime: 0.2
-  reload: 0
   range: 6
+  reload: 0
   damageBullet: 1
 --- !u!114 &8181865135046670262
 MonoBehaviour:
@@ -661,6 +664,7 @@ MonoBehaviour:
   nearestTarget: {fileID: 0}
   rb: {fileID: 6055002364725839091}
   sprite: {fileID: 1389510971715156937}
+  miniDistance: 0
 --- !u!50 &6055002364725839091
 Rigidbody2D:
   serializedVersion: 5
@@ -742,7 +746,6 @@ MonoBehaviour:
   range: 0
   armor: 0
   movementSpeed: 0
-  statsName: []
   maxHealthUI: {fileID: 0}
   damagePercentageUI: {fileID: 0}
   damageBrutUI: {fileID: 0}
@@ -750,6 +753,8 @@ MonoBehaviour:
   rangeUI: {fileID: 0}
   armorUI: {fileID: 0}
   movementSpeedUI: {fileID: 0}
+  shootScript: {fileID: 3117228514356186717}
+  health: {fileID: 1523136580389446056}
 --- !u!1 &9095494731374742452
 GameObject:
   m_ObjectHideFlags: 0
@@ -899,6 +904,9 @@ MonoBehaviour:
   stats: {fileID: 9215897179124887258}
   healthSlider: {fileID: 0}
   textLife: {fileID: 0}
+  eventDie:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1902143659607507804
 MonoBehaviour:
   m_ObjectHideFlags: 0

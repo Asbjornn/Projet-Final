@@ -19,3 +19,7 @@ MonoBehaviour:
   price: 10
   statName: damagePercentage
   givenStat: 0.15
+  itemStats:
+  - itemType: 0
+    statName: 1
+    stat: 0.15

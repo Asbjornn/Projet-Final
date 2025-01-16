@@ -69,6 +69,7 @@ public class PlayerStats : MonoBehaviour
 
     public void TakeDamage(float amount)
     {
+        //faire que l'ennemi te fais au minimum 10% de ton armure
         animator.SetTrigger("Hurt");
         currentHealth -= amount - armor;
     }

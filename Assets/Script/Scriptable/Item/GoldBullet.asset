@@ -14,8 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 16b2c09292904634cb6b42cb126020f8, type: 3}
   nameItem: Balle en or
-  itemEffect: "D\xE9gats : +2"
+  itemEffect: "D\xE9gats : +1"
   description: "Une balle b\xE9nie qui causera assur\xE9ment plus de d\xE9gats"
   price: 15
   statName: damageBrut
   givenStat: 2
+  itemStats:
+  - itemType: 0
+    statName: 2
+    stat: 1

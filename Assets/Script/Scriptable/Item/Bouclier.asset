@@ -19,3 +19,7 @@ MonoBehaviour:
   price: 10
   statName: armor
   givenStat: 0.5
+  itemStats:
+  - itemType: 0
+    statName: 5
+    stat: 0.5

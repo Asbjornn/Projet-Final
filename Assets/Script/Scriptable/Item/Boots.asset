@@ -14,8 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 2bcf8e54d48ef454fb28ac3bdf159c9e, type: 3}
   nameItem: Chaussure
-  itemEffect: 'Vitesse : +2'
+  itemEffect: 'Vitesse : +1'
   description: Vous n'aurez plus froid au pied
   price: 10
   statName: movementSpeed
-  givenStat: 2
+  givenStat: 1
+  itemStats:
+  - itemType: 0
+    statName: 6
+    stat: 1

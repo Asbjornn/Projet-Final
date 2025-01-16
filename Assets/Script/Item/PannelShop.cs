@@ -14,9 +14,11 @@ public class PannelShop : MonoBehaviour
     public GameObject pannelPrefab;
     public List<GameObject> createdPannel;
 
-    [Header("Inventory and stats")]
+    [Header("Inventory, stats, weapons")]
     public PlayerInventory playerInventory;
     public PlayerStats playerStats;
+    public GameObject weaponContainers;
+    GameObject emptyWeapons;
 
     [Header("Reroll")]
     public Button rerollButton;
@@ -27,7 +29,6 @@ public class PannelShop : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
         InitialiseShop();
     }
 
@@ -92,7 +93,33 @@ public class PannelShop : MonoBehaviour
         if(playerInventory.monsterFragments - item.price >= 0)
         {
             playerInventory.BuyWithMonsterFragment(item.price);
-            playerStats.UpdateStat(item.statName, item.givenStat);
+            //playerStats.UpdateStat(item.statName, item.givenStat);
+
+            for (int i = 0; i < item.itemStats.Count; i++)
+            {
+                if (item.itemStats[i].itemType.ToString() == "item")
+                {
+                    playerStats.UpdateStat(item.itemStats[i].statName.ToString(), item.itemStats[i].stat);
+                }
+                else if (item.itemStats[i].itemType.ToString() == "weapon")
+                {
+                    //initialiser les stats de l'arme
+                    for (int y = 0; y < weaponContainers.transform.childCount; y++)
+                    {
+                        if(!weaponContainers.transform.GetChild(y).gameObject.activeSelf)
+                        {
+                            weaponContainers.transform.GetChild(y).gameObject.SetActive(true);
+                            Shoot sho = weaponContainers.transform.GetChild(y).GetComponent<Shoot>();
+                            sho.InitializeWeaponData(item.itemStats[i].statName.ToString(), item.itemStats[i].stat, item);
+                            break;
+                        }
+                        else
+                        {
+                            print("plus de place dans l'inventaire");
+                        }
+                    }
+                }
+            }
             button.interactable = false;
         }
         else

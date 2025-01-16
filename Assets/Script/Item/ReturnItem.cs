@@ -10,7 +10,7 @@ public class ReturnItem : MonoBehaviour
 
     public void Start()
     {
-        pannelShop = GameObject.Find("PannelItems").GetComponent<PannelShop>();
+        pannelShop = GameObject.Find("PannelShop").GetComponent<PannelShop>();
         playerInventory = GameObject.Find("Player").GetComponent<PlayerInventory>();
     }
 

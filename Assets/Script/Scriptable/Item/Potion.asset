@@ -19,3 +19,7 @@ MonoBehaviour:
   price: 10
   statName: maxHealth
   givenStat: 5
+  itemStats:
+  - itemType: 0
+    statName: 0
+    stat: 5
