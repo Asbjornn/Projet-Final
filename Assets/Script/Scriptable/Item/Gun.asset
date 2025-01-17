@@ -12,17 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4b76bb7734eb7d4a96b537741f9b418, type: 3}
   m_Name: Gun
   m_EditorClassIdentifier: 
-  sprite: {fileID: 580531872, guid: 5763fed1b9fec574eb749f5f5b82e1f5, type: 3}
+  sprite: {fileID: 3874013877107024128, guid: cf27faad390db5a43aad33196b73c5aa, type: 3}
   nameItem: Pistolet
-  itemEffect: "D\xE9gat : 6 \\nPort\xE9e : 6 \\nRecharge : 1sec"
+  itemEffect: "D\xE9gat : 2 \\nPort\xE9e : 6 \\nRecharge : 1sec"
   description: Un flinge simple mais efficace
   price: 20
-  statName: 
-  givenStat: 0
+  minReloadTime: 0.2
   itemStats:
   - itemType: 1
     statName: 7
-    stat: 3
+    stat: 2
   - itemType: 1
     statName: 8
     stat: 1

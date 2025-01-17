@@ -9,8 +9,9 @@ public class Item : ScriptableObject
     public string itemEffect;
     public string description;
     public int price;
-    public string statName;
-    public float givenStat;
+    //public string statName;
+    //public float statUI;
+    public float minReloadTime;
 
     [Header("Data stat")]
     public List<ItemData> itemStats;

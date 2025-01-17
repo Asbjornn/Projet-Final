@@ -7,6 +7,7 @@ public class ReturnItem : MonoBehaviour
     public Button button;
     public PannelShop pannelShop;
     public PlayerInventory playerInventory;
+    public bool itemPurchased = false;
 
     public void Start()
     {
@@ -16,14 +17,22 @@ public class ReturnItem : MonoBehaviour
 
     private void Update()
     {
-        if((playerInventory.monsterFragments - itemUI.choosenItem.price) >= 0)
+        if ((playerInventory.monsterFragments - itemUI.choosenItem.price) >= 0 && !itemPurchased)
         {
-            button.interactable = true;
+            if(playerInventory.actualWeaponInInventory >= playerInventory.inventoryWeaponMaxSpace && itemUI.choosenItem.itemStats[0].itemType.ToString() == "weapon")
+            {
+                button.interactable = false;
+            }
+            else
+            {
+                button.interactable = true;
+            }
         }
         else
         {
             button.interactable = false;
         }
+
     }
 
     public Item Return()
@@ -34,5 +43,6 @@ public class ReturnItem : MonoBehaviour
     public void OnClick()
     {
         pannelShop.BuyItem(Return(), button);
+        itemPurchased = true;
     }
 }

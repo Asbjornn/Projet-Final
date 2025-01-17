@@ -5,6 +5,11 @@ public class Buttons : MonoBehaviour
 {
     public AudioSource audioSource;
 
+    private void Start()
+    {
+        Time.timeScale = 1.0f;
+    }
+
     public void LoadScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
@@ -33,5 +38,15 @@ public class Buttons : MonoBehaviour
     public void QuiApplication()
     {
         Application.Quit();
+    }
+
+    public void StopTime()
+    {
+        Time.timeScale = 0;
+    }
+
+    public void ResumeTime()
+    {
+        Time.timeScale = 1;
     }
 }

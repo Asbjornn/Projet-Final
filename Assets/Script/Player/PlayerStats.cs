@@ -59,9 +59,9 @@ public class PlayerStats : MonoBehaviour
     public void UpdateStatsUI()
     {
         maxHealthUI.text = $"Max Health {maxHealth}";
-        damagePercentageUI.text = $"Damage % {damagePercentage}";
+        damagePercentageUI.text = $"Damage {damagePercentage} %";
         damageBrutUI.text = $"Damage Brut {damageBrut}";
-        attackSpeedUI.text = $"Attack Speed {attackSpeed}";
+        attackSpeedUI.text = $"Attack Speed {attackSpeed} %";
         rangeUI.text = $"Range {range}";
         armorUI.text = $"Armor {armor}";
         movementSpeedUI.text = $"Move Speed {movementSpeed}";
@@ -89,7 +89,10 @@ public class PlayerStats : MonoBehaviour
                 damageBrut += value;
                 break;
             case "attackSpeed":
-                attackSpeed += value;
+                if((attackSpeed + value) <= 0.1f)
+                {
+                    attackSpeed += value;
+                }
                 break;
             case "range":
                 range += value;

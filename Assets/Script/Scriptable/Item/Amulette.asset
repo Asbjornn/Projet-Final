@@ -17,9 +17,8 @@ MonoBehaviour:
   itemEffect: 'Damage : +15%'
   description: "Une amulette qui emet une lumi\xE8re chaleureuse"
   price: 10
-  statName: damagePercentage
-  givenStat: 0.15
+  minReloadTime: 0
   itemStats:
   - itemType: 0
     statName: 1
-    stat: 0.15
+    stat: 15

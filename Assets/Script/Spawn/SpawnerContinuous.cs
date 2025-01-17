@@ -67,8 +67,16 @@ public class SpawnerContinuous : MonoBehaviour
         {
             if(!waveManager.waveEnd)
             {
-                waveManager.endWaveEvent.Invoke();
-                waveManager.waveEnd = true;
+                if(waveID >= waveManager.waves.Count -1)
+                {
+                    waveManager.endGame.Invoke();
+                    waveManager.waveEnd = true;
+                }
+                else
+                {
+                    waveManager.endWaveEvent.Invoke();
+                    waveManager.waveEnd = true;
+                }
             }
         }
     }

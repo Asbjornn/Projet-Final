@@ -14,11 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: f81ab82504658f243b517f6bec6371bd, type: 3}
   nameItem: Bouclier
-  itemEffect: 'Armure : +2'
+  itemEffect: 'Armure : +0.5'
   description: Un bouclier au couleur chaude
   price: 10
-  statName: armor
-  givenStat: 0.5
+  minReloadTime: 0
   itemStats:
   - itemType: 0
     statName: 5

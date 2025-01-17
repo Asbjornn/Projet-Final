@@ -19,6 +19,7 @@ public class WaveManager : MonoBehaviour
     [Header("Events")]
     public UnityEvent endWaveEvent;
     public UnityEvent nextWaveEvent;
+    public UnityEvent endGame;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

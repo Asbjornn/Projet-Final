@@ -68,6 +68,7 @@ public class PannelShop : MonoBehaviour
             ItemUI itemUI = pannel.GetComponent<ItemUI>();
             itemUI.choosenItem = itemInShop[randomID];
             pannel.transform.GetChild(4).GetComponent<Button>().interactable = true;
+            pannel.transform.GetChild(4).GetComponent<ReturnItem>().itemPurchased = false;
             itemUI.InitialiseItem();
             itemInShop.RemoveAt(randomID);
         }
@@ -92,34 +93,54 @@ public class PannelShop : MonoBehaviour
     {
         if(playerInventory.monsterFragments - item.price >= 0)
         {
-            playerInventory.BuyWithMonsterFragment(item.price);
-            //playerStats.UpdateStat(item.statName, item.givenStat);
+            Shoot sho = null;
+            bool buyItem = false;
 
             for (int i = 0; i < item.itemStats.Count; i++)
             {
-                if (item.itemStats[i].itemType.ToString() == "item")
+                if (item.itemStats[i].itemType.ToString() == "weapon" && !buyItem)
                 {
-                    playerStats.UpdateStat(item.itemStats[i].statName.ToString(), item.itemStats[i].stat);
-                }
-                else if (item.itemStats[i].itemType.ToString() == "weapon")
-                {
-                    //initialiser les stats de l'arme
+                    buyItem = true;
                     for (int y = 0; y < weaponContainers.transform.childCount; y++)
                     {
-                        if(!weaponContainers.transform.GetChild(y).gameObject.activeSelf)
+                        if (!weaponContainers.transform.GetChild(y).gameObject.activeSelf)
                         {
+                            //active l'arme
                             weaponContainers.transform.GetChild(y).gameObject.SetActive(true);
-                            Shoot sho = weaponContainers.transform.GetChild(y).GetComponent<Shoot>();
-                            sho.InitializeWeaponData(item.itemStats[i].statName.ToString(), item.itemStats[i].stat, item);
+                            sho = weaponContainers.transform.GetChild(y).GetComponent<Shoot>();
                             break;
                         }
                         else
                         {
-                            print("plus de place dans l'inventaire");
+                            print("plus aucun gameObject désactivé");
                         }
                     }
                 }
+                else
+                {
+                    print("l'item n'est pas un weapon");
+                }
+
+                if (item.itemStats[i].itemType.ToString() == "item")
+                {
+                    //initialise les stats du player
+                    playerStats.UpdateStat(item.itemStats[i].statName.ToString(), item.itemStats[i].stat);
+
+                    //enleve les fragment de l'inventaire
+                    //playerInventory.BuyWithMonsterFragment(item.price);
+                }
+                else if (item.itemStats[i].itemType.ToString() == "weapon" /*&& playerInventory.actualWeaponInInventory <= playerInventory.inventoryWeaponMaxSpace*/)
+                {
+                    //initialiser les stats de l'arme
+                    sho.InitializeWeaponData(item.itemStats[i].statName.ToString(), item.itemStats[i].stat, item);
+
+                    //ajoute 1 dans l'inventaire int
+                    playerInventory.actualWeaponInInventory++;
+                }
             }
+            //enleve les fragment de l'inventaire
+            playerInventory.BuyWithMonsterFragment(item.price);
+
             button.interactable = false;
         }
         else
