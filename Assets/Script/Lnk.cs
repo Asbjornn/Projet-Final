@@ -4,6 +4,6 @@ public class Lnk : MonoBehaviour
 {
     public void OpenLink()
     {
-        Application.OpenURL("https://docs.google.com/forms/d/1YhffWlC120Jhay_qgQR-sBzzZwnUj9OhqBHXl8CJ5ow/edit");
+        Application.OpenURL("https://docs.google.com/forms/d/e/1FAIpQLSeyx5Gj_kKJytd2D_bT-_elTdS5AMVmGu1Jlz3ldtpqE8IBwQ/viewform?usp=header");
     }
 }

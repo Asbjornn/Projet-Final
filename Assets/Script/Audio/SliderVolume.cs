@@ -16,7 +16,7 @@ public class SliderVolume : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log(PlayerPrefs.GetFloat(KeyName));
+        //Debug.Log(PlayerPrefs.GetFloat(KeyName));
         if (PlayerPrefs.HasKey(KeyName))
         {
             volumeValue = PlayerPrefs.GetFloat(KeyName);
@@ -27,6 +27,7 @@ public class SliderVolume : MonoBehaviour
         {
             PlayerPrefs.SetFloat(KeyName, 1f);
             PlayerPrefs.Save();
+            slider.value = slider.maxValue;
         }
     }
 

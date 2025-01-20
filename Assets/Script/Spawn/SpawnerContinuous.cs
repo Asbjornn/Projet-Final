@@ -47,7 +47,7 @@ public class SpawnerContinuous : MonoBehaviour
 
             if (spawnInterval < 0)
             {
-                if((waveID % 2 == 0 || waveID % 3 == 0 || waveID % 4 == 0 || waveID % 5 == 0) && waveID != 0)
+                if(/*(waveID % 2 == 0 || waveID % 3 == 0 || waveID % 4 == 0 || waveID % 5 == 0) && waveID != 0*/ waveID > 2)
                 {
                     StartCoroutine(SpawnEnemy(0));
                 }

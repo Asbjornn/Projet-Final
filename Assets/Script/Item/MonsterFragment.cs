@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class MonsterFragment : MonoBehaviour
 {
+    public GameObject parent;
     public int amount;
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -10,7 +11,7 @@ public class MonsterFragment : MonoBehaviour
         {
             PlayerInventory inventory = collision.GetComponent<PlayerInventory>();
             inventory.WalkOnRessource(amount);
-            Destroy(gameObject);
+            Destroy(parent);
         }
     }
 }

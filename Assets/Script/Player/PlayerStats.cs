@@ -91,7 +91,7 @@ public class PlayerStats : MonoBehaviour
             case "attackSpeed":
                 if((attackSpeed + value) <= 0.1f)
                 {
-                    attackSpeed += value;
+                    attackSpeed -= value;
                 }
                 break;
             case "range":

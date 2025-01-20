@@ -1,0 +1,13 @@
+=== Début de la partie ===
+Fin de la Vague 1 
+Nombre de fragments : 17 
+Player Stats : 
+Vie Max : 10 
+Vie Actuelle : 8 
+Dégâts Brut : 0 
+Dégâts % : 0 
+Vitesse : 4 
+Portée : 0 
+Vitesse Attaque : 0 
+Armure : 0
+

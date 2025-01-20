@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 15
   currentHealth: 0
-  degatPourcentage: 0
-  degatBrut: 0
-  vitesseAttaque: 0
-  portee: 0
-  armure: 0
-  movementSpeed: 3
+  damagePercentage: 0
+  damageBrut: 0
+  attackSpeed: 0
+  range: 0
+  armor: 0
+  movementSpeed: 2.5

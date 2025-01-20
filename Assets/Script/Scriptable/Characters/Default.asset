@@ -19,4 +19,4 @@ MonoBehaviour:
   attackSpeed: 0
   range: 0
   armor: 0
-  movementSpeed: 5
+  movementSpeed: 4
