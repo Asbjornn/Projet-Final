@@ -29,11 +29,11 @@ public class Enemy1 : MonoBehaviour
         Vector2 direction = player.position - transform.position;
         if (direction.x > 0)
         {
-            spriteRenderer.flipX = false;
+            spriteRenderer.flipX = true;
         }
         else
         {
-            spriteRenderer.flipX = true;
+            spriteRenderer.flipX = false;
         }
     }
 
@@ -44,7 +44,7 @@ public class Enemy1 : MonoBehaviour
             print("je detecte collision");
             PlayerStats stats = GameObject.Find("Stats").GetComponent<PlayerStats>();
             stats.TakeDamage(damage);
-            health.EnemyDie();
+            health.EnemyDie(health.fragmentOnDeath);
         }
     }
 }

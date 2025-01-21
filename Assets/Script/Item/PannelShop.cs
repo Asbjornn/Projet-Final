@@ -45,7 +45,7 @@ public class PannelShop : MonoBehaviour
 
     private void Update()
     {
-        textRerollButton.text = $"REROLL : {priceReroll}";
+        textRerollButton.text = $"REROLL : {priceReroll} fragments";
         if((playerInventory.monsterFragments - priceReroll) >= 0)
         {
             canReroll = true;
@@ -110,7 +110,7 @@ public class PannelShop : MonoBehaviour
                             sho = weaponContainers.transform.GetChild(y).GetComponent<Shoot>();
                             break;
                         }
-                        else
+                        else if(i <= 0)
                         {
                             print("plus aucun gameObject désactivé");
                         }

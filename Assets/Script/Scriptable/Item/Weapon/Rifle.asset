@@ -21,7 +21,7 @@ MonoBehaviour:
   itemStats:
   - itemType: 1
     statName: 7
-    stat: 0.5
+    stat: 0.25
   - itemType: 1
     statName: 8
     stat: 0.3

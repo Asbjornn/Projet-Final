@@ -71,7 +71,7 @@ public class PlayerStats : MonoBehaviour
     {
         //faire que l'ennemi te fais au minimum 10% de ton armure
         animator.SetTrigger("Hurt");
-        currentHealth -= amount - armor;
+        currentHealth -= Mathf.Max(amount / 10, amount - armor);
     }
 
     public void UpdateStat(string statName, float value)
@@ -80,7 +80,19 @@ public class PlayerStats : MonoBehaviour
         {
             case "maxHealth":
                 maxHealth += value;
-                health.AddHealth(value);
+                if(value > 0)
+                {
+                    health.AddHealth(value);
+                }
+                else if(health.healthSlider.value - value > maxHealth)
+                {
+                    health.healthSlider.value = maxHealth;
+                }
+                else if(health.healthSlider.value - value <= 0)
+                {
+                    maxHealth = 1;
+                    health.healthSlider.value = maxHealth;
+                }
                 break;
             case "damagePercentage":
                 damagePercentage += value;
@@ -89,10 +101,7 @@ public class PlayerStats : MonoBehaviour
                 damageBrut += value;
                 break;
             case "attackSpeed":
-                if((attackSpeed + value) <= 0.1f)
-                {
-                    attackSpeed -= value;
-                }
+                attackSpeed -= value;
                 break;
             case "range":
                 range += value;

@@ -14,11 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 79463236aa42dce42b94d963ff060b98, type: 3}
   nameItem: Roller
-  itemEffect: 'Vitesse : +1'
+  itemEffect: 'Vitesse : +1.5 \n Armure -0.5'
   description: Un seul roller .. pas des plus pratiques
-  price: 15
+  price: 20
   minReloadTime: 0
   itemStats:
   - itemType: 0
     statName: 6
-    stat: 1
+    stat: 1.5
+  - itemType: 0
+    statName: 5
+    stat: -0.5

@@ -7,6 +7,7 @@ public class EnemyHealth : MonoBehaviour
     public Animator animator;
     public GameObject fragment;
     public SpawnerContinuous spawner;
+    public int fragmentOnDeath;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -88,13 +89,16 @@ public class EnemyHealth : MonoBehaviour
     {
         if(currentHealth <= 0)
         {
-            EnemyDie();
+            EnemyDie(fragmentOnDeath);
         }
     }
 
-    public void EnemyDie()
+    public void EnemyDie(int amount)
     {
-        Instantiate(fragment, transform.position, Quaternion.identity);
+        for(int i = 0; i < amount; i++)
+        {
+            Instantiate(fragment, transform.position, Quaternion.identity);
+        }
         Destroy(gameObject);
     }
 
@@ -102,10 +106,10 @@ public class EnemyHealth : MonoBehaviour
     {
         if(collision.CompareTag("Bullet"))
         {
+            Destroy(collision.gameObject);
+            animator.SetTrigger("Hurt");
             float amount = collision.gameObject.GetComponent<Damage>().damage;
             currentHealth -= amount;
-            animator.SetTrigger("Hurt");
-            Destroy(collision.gameObject);
         }
     }
 }

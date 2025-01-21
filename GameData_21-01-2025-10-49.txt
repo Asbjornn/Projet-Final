@@ -1,0 +1,229 @@
+=== Début de la partie ===
+Fin de la Vague 1 
+Nombre de fragments : 18 
+Player Stats : 
+Vie Max : 10 
+Vie Actuelle : 9 
+Dégâts Brut : 0 
+Dégâts % : 0 
+Vitesse : 4 
+Portée : 0 
+Vitesse Attaque : 0 
+Armure : 0
+
+Fin de la Vague 2 
+Nombre de fragments : 20 
+Player Stats : 
+Vie Max : 10 
+Vie Actuelle : 8 
+Dégâts Brut : 0,5 
+Dégâts % : 0 
+Vitesse : 4 
+Portée : 0 
+Vitesse Attaque : 0 
+Armure : 0
+
+Fin de la Vague 3 
+Nombre de fragments : 36 
+Player Stats : 
+Vie Max : 10 
+Vie Actuelle : 8 
+Dégâts Brut : 0,5 
+Dégâts % : 0 
+Vitesse : 4 
+Portée : 0 
+Vitesse Attaque : 0 
+Armure : 0
+
+Fin de la Vague 4 
+Nombre de fragments : 34 
+Player Stats : 
+Vie Max : 10 
+Vie Actuelle : 6 
+Dégâts Brut : 1,5 
+Dégâts % : 0 
+Vitesse : 4 
+Portée : 0 
+Vitesse Attaque : 0 
+Armure : 0
+
+Fin de la Vague 5 
+Nombre de fragments : 43 
+Player Stats : 
+Vie Max : 10 
+Vie Actuelle : 6 
+Dégâts Brut : 1,5 
+Dégâts % : 0 
+Vitesse : 4 
+Portée : 0 
+Vitesse Attaque : 0 
+Armure : 0
+
+Fin de la Vague 6 
+Nombre de fragments : 42 
+Player Stats : 
+Vie Max : 10 
+Vie Actuelle : 6 
+Dégâts Brut : 1,5 
+Dégâts % : 0 
+Vitesse : 5,5 
+Portée : 0 
+Vitesse Attaque : 0 
+Armure : 0
+
+Fin de la Vague 7 
+Nombre de fragments : 45 
+Player Stats : 
+Vie Max : 10 
+Vie Actuelle : 6 
+Dégâts Brut : 1,5 
+Dégâts % : 0 
+Vitesse : 5,5 
+Portée : 0 
+Vitesse Attaque : 0 
+Armure : 0
+
+Fin de la Vague 8 
+Nombre de fragments : 30 
+Player Stats : 
+Vie Max : 25 
+Vie Actuelle : 21 
+Dégâts Brut : 1,5 
+Dégâts % : 15 
+Vitesse : 6 
+Portée : 0 
+Vitesse Attaque : 0 
+Armure : 0
+
+Fin de la Vague 9 
+Nombre de fragments : 47 
+Player Stats : 
+Vie Max : 25 
+Vie Actuelle : 21 
+Dégâts Brut : 1,5 
+Dégâts % : 15 
+Vitesse : 6 
+Portée : 0 
+Vitesse Attaque : 0 
+Armure : 0
+
+Fin de la Vague 10 
+Nombre de fragments : 65 
+Player Stats : 
+Vie Max : 25 
+Vie Actuelle : 21 
+Dégâts Brut : 1,5 
+Dégâts % : 15 
+Vitesse : 7 
+Portée : 0 
+Vitesse Attaque : 0 
+Armure : 0
+
+Fin de la Vague 11 
+Nombre de fragments : 54 
+Player Stats : 
+Vie Max : 30 
+Vie Actuelle : 26 
+Dégâts Brut : 2,5 
+Dégâts % : 15 
+Vitesse : 7 
+Portée : 0 
+Vitesse Attaque : 0 
+Armure : 0
+
+Fin de la Vague 12 
+Nombre de fragments : 78 
+Player Stats : 
+Vie Max : 30 
+Vie Actuelle : 26 
+Dégâts Brut : 2,5 
+Dégâts % : 40 
+Vitesse : 8 
+Portée : 0,5 
+Vitesse Attaque : 0 
+Armure : 0
+
+Fin de la Vague 13 
+Nombre de fragments : 90 
+Player Stats : 
+Vie Max : 35 
+Vie Actuelle : 31 
+Dégâts Brut : 3,5 
+Dégâts % : 40 
+Vitesse : 9 
+Portée : 0,5 
+Vitesse Attaque : 0 
+Armure : 0
+
+Fin de la Vague 14 
+Nombre de fragments : 99 
+Player Stats : 
+Vie Max : 35 
+Vie Actuelle : 31 
+Dégâts Brut : 3,5 
+Dégâts % : 40 
+Vitesse : 9,5 
+Portée : 2 
+Vitesse Attaque : 0 
+Armure : 1
+
+Fin de la Vague 15 
+Nombre de fragments : 122 
+Player Stats : 
+Vie Max : 50 
+Vie Actuelle : 50,5 
+Dégâts Brut : 4 
+Dégâts % : 40 
+Vitesse : 10 
+Portée : 2,5 
+Vitesse Attaque : 0 
+Armure : 2,5
+
+Fin de la Vague 16 
+Nombre de fragments : 93 
+Player Stats : 
+Vie Max : 55 
+Vie Actuelle : 57 
+Dégâts Brut : 4 
+Dégâts % : 55 
+Vitesse : 12 
+Portée : 4 
+Vitesse Attaque : 0 
+Armure : 2,5
+
+Fin de la Vague 17 
+Nombre de fragments : 97 
+Player Stats : 
+Vie Max : 55 
+Vie Actuelle : 57 
+Dégâts Brut : 5 
+Dégâts % : 80 
+Vitesse : 12,5 
+Portée : 4 
+Vitesse Attaque : 0 
+Armure : 2,5
+
+Fin de la Vague 18 
+Nombre de fragments : 131 
+Player Stats : 
+Vie Max : 55 
+Vie Actuelle : 63 
+Dégâts Brut : 5 
+Dégâts % : 135 
+Vitesse : 13,5 
+Portée : 5,5 
+Vitesse Attaque : 0 
+Armure : 2,5
+
+Fin de la Vague 19 
+Nombre de fragments : 189 
+Player Stats : 
+Vie Max : 70 
+Vie Actuelle : 84 
+Dégâts Brut : 6,5 
+Dégâts % : 160 
+Vitesse : 14 
+Portée : 5,5 
+Vitesse Attaque : 0 
+Armure : 3
+

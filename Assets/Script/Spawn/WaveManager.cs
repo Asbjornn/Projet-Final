@@ -11,6 +11,9 @@ public class WaveManager : MonoBehaviour
     public List<GameObject> environements;
     public List<GameObject> environementNotPicked;
     public List<Waves> waves;
+    public List<ListEnemies> enemiesList;
+    [HideInInspector]
+    public List<ListEnemies> enemiesAlreadyThere;
 
     [Header("Bool")]
     public bool newEnvironement = false;
@@ -21,10 +24,16 @@ public class WaveManager : MonoBehaviour
     public UnityEvent nextWaveEvent;
     public UnityEvent endGame;
 
+    private string currentEnvironements;
+
+    [System.Serializable]
+    public class ListEnemies { public List<GameObject> enemies; }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         environementNotPicked = new List<GameObject>(environements);
+        enemiesAlreadyThere = new List<ListEnemies>(enemiesList);
     }
 
     // Update is called once per frame
@@ -58,6 +67,8 @@ public class WaveManager : MonoBehaviour
 
         int randomID = Random.Range(0, environementNotPicked.Count);
         environementNotPicked[randomID].SetActive(true);
+        spawner.enemies = enemiesAlreadyThere[randomID].enemies;
+        enemiesAlreadyThere.RemoveAt(randomID);
     }
 
     public void NextWaveEvent()

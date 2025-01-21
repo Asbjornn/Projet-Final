@@ -56,11 +56,11 @@ public class StateMachine : MonoBehaviour
         currentState.OnUpdate();
         textCurrentState.text = currentState.ToString();
 
-        Collider2D col = Physics2D.OverlapCircle(transform.position, range);
+        /*Collider2D col = Physics2D.OverlapCircle(transform.position, range);
         if (col.CompareTag("Cross"))
         {
             CancelSpawn(col.gameObject);
-        }
+        }*/
     }
 
     private void FixedUpdate()

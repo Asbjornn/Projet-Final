@@ -16,7 +16,7 @@ public class EnemyShoot : MonoBehaviour
     [Header("ShootParameters")]
     public float range;
     public float shootInterval;
-    public GameObject weapon;
+    public GameObject shootPoint;
     public GameObject enemyBullet;
 
     public bool canChase;
@@ -62,14 +62,14 @@ public class EnemyShoot : MonoBehaviour
 
     public void Attack()
     {
-        Vector3 direction = player.position - weapon.transform.position;
+        Vector3 direction = player.position - shootPoint.transform.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        weapon.transform.rotation = Quaternion.Euler(0, 0, angle);
+        shootPoint.transform.rotation = Quaternion.Euler(0, 0, angle);
 
         if(chrono > shootInterval)
         {
             animator.SetTrigger("Shoot");
-            GameObject newBullet = Instantiate(enemyBullet, weapon.transform.position, weapon.transform.rotation);
+            GameObject newBullet = Instantiate(enemyBullet, shootPoint.transform.position, shootPoint.transform.rotation);
             chrono = 0;
         }
         else
@@ -110,13 +110,13 @@ public class EnemyShoot : MonoBehaviour
             print("je detecte collision");
             PlayerStats stats = GameObject.Find("Stats").GetComponent<PlayerStats>();
             stats.TakeDamage(damageClose);
-            health.EnemyDie();
+            health.EnemyDie(health.fragmentOnDeath);
         }
     }
 
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(weapon.transform.position, range);
+        Gizmos.DrawWireSphere(shootPoint.transform.position, range);
     }
 }

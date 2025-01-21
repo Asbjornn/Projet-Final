@@ -5,11 +5,11 @@ public class MonsterFragment : MonoBehaviour
     public GameObject parent;
     public int amount;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
-            PlayerInventory inventory = collision.GetComponent<PlayerInventory>();
+            PlayerInventory inventory = collision.gameObject.GetComponent<PlayerInventory>();
             inventory.WalkOnRessource(amount);
             Destroy(parent);
         }

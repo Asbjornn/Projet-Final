@@ -8,6 +8,10 @@ TagManager:
   - Bullet
   - Cross
   - Fragment
+  - Forest
+  - Desert
+  - Snow
+  - Cave
   layers:
   - Default
   - TransparentFX

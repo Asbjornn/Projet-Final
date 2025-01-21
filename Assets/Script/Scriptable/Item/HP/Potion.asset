@@ -16,7 +16,7 @@ MonoBehaviour:
   nameItem: Potion de vie
   itemEffect: 'Vie max : +5'
   description: "Une potion qui a l'air tout \xE0 fait app\xE9tissante"
-  price: 10
+  price: 8
   minReloadTime: 0
   itemStats:
   - itemType: 0

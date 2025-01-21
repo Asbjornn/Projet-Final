@@ -26,7 +26,8 @@ public class CreateText : MonoBehaviour
             $"Vitesse : {playerStats.movementSpeed} \n" +
             $"Portée : {playerStats.range} \n" +
             $"Vitesse Attaque : {playerStats.attackSpeed} \n" +
-            $"Armure : {playerStats.armor}\n\n";
+            $"Armure : {playerStats.armor}\n" +
+            $"Temps en jeu ! {Time.time}\n\n";
 
         if (System.IO.File.Exists(fileName))
         {

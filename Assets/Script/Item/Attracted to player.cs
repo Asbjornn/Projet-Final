@@ -12,7 +12,7 @@ public class Attractedtoplayer : MonoBehaviour
         {
             dir = collision.transform.position;
             rb.linearVelocity = (dir - transform.position) * speed;
-            print("Move");
+            //print("Move");
         }
     }
 

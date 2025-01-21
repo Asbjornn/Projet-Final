@@ -15,8 +15,8 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 2bcf8e54d48ef454fb28ac3bdf159c9e, type: 3}
   nameItem: Chaussure
   itemEffect: 'Vitesse : +0.5'
-  description: "Vous n'aurez plus froid \xE0 votre pied droit"
-  price: 10
+  description: "Vous n'aurez plus froid \xE0 votre pied gauche"
+  price: 8
   minReloadTime: 0
   itemStats:
   - itemType: 0

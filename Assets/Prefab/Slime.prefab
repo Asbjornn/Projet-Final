@@ -270,6 +270,7 @@ MonoBehaviour:
   animator: {fileID: 5670165993169725221}
   fragment: {fileID: 2215251955009714210, guid: 005b9f9dbab9ac64ab7c36691987665f, type: 3}
   spawner: {fileID: 0}
+  fragmentOnDeath: 1
 --- !u!95 &5670165993169725221
 Animator:
   serializedVersion: 7

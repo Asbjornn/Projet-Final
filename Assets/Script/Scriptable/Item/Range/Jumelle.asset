@@ -16,7 +16,7 @@ MonoBehaviour:
   nameItem: Jumelles
   itemEffect: "Port\xE9e : +0.5"
   description: "Jumelles d'exception qui permettent m\xEAme de voir les oiseaux"
-  price: 10
+  price: 8
   minReloadTime: 0
   itemStats:
   - itemType: 0
