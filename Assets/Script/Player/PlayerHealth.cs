@@ -26,6 +26,11 @@ public class PlayerHealth : MonoBehaviour
             print("Meurt");
             Die();
         }
+
+        if(stats.currentHealth > stats.maxHealth)
+        {
+            stats.currentHealth = stats.maxHealth;
+        }
     }
 
     public void UpdateHealth()
@@ -36,6 +41,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void AddHealth(float amount)
     {
+        stats.maxHealth += amount;
         healthSlider.maxValue = stats.maxHealth;
         stats.currentHealth += amount;
     }

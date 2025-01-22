@@ -6,6 +6,7 @@ public class WaveManager : MonoBehaviour
 {
     [Header("Script")]
     public SpawnerContinuous spawner;
+    public EventManager eventManager;
 
     [Header("List")]
     public List<GameObject> environements;

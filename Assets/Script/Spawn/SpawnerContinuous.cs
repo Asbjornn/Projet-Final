@@ -23,6 +23,7 @@ public class SpawnerContinuous : MonoBehaviour
     public GameObject cross;
     public WaveManager waveManager;
     public FragmentManager fragmentManager;
+    public EventManager eventManager;
 
     [Header("List")]
     public List<GameObject> enemies;
@@ -35,6 +36,7 @@ public class SpawnerContinuous : MonoBehaviour
         textNumberWave.text = $"Vague {waveID + 1}";
         waveTimer = waveManager.waves[waveID].waveTime;
         spawnInterval = waveManager.waves[waveID].waveInterval;
+        eventManager.StartEvent();
     }
 
     // Update is called once per frame
@@ -47,11 +49,11 @@ public class SpawnerContinuous : MonoBehaviour
 
             if (spawnInterval < 0)
             {
-                if((waveID % 4 == 0 || waveID % 5 == 0) && waveID != 0)
+                if(waveID % 5 == 3 || waveID % 5 == 4)
                 {
                     StartCoroutine(SpawnEnemy(0));
                 }
-                else if((waveID % 2 == 0 || waveID % 3 == 0) && waveID != 0)
+                else if(waveID % 5 == 1 || waveID % 5 == 2)
                 {
                     StartCoroutine(SpawnEnemy(1));
                 }
@@ -73,11 +75,13 @@ public class SpawnerContinuous : MonoBehaviour
             {
                 if(waveID >= waveManager.waves.Count -1)
                 {
+                    //FIN DU GGWP
                     waveManager.endGame.Invoke();
                     waveManager.waveEnd = true;
                 }
                 else
                 {
+                    //FIN DE LA VAGUE
                     waveManager.endWaveEvent.Invoke();
                     waveManager.waveEnd = true;
                 }

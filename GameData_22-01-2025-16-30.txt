@@ -1,0 +1,79 @@
+=== Début de la partie ===
+Fin de la Vague 1 
+Nombre de fragments : 14 
+Player Stats : 
+Vie Max : 10 
+Vie Actuelle : 10 
+Dégâts Brut : 0 
+Dégâts % : 0 
+Vitesse : 4 
+Portée : 0 
+Vitesse Attaque : 0 
+Armure : 0
+Temps en jeu ! 44,98757
+
+Fin de la Vague 2 
+Nombre de fragments : 30 
+Player Stats : 
+Vie Max : 10 
+Vie Actuelle : 6 
+Dégâts Brut : 0 
+Dégâts % : 0 
+Vitesse : 4 
+Portée : 0 
+Vitesse Attaque : 0 
+Armure : 0
+Temps en jeu ! 92,008
+
+Fin de la Vague 3 
+Nombre de fragments : 41 
+Player Stats : 
+Vie Max : 15 
+Vie Actuelle : 9 
+Dégâts Brut : 0 
+Dégâts % : 0 
+Vitesse : 4 
+Portée : 0 
+Vitesse Attaque : 0 
+Armure : 0
+Temps en jeu ! 147,4672
+
+Fin de la Vague 4 
+Nombre de fragments : 33 
+Player Stats : 
+Vie Max : 15 
+Vie Actuelle : 8,75 
+Dégâts Brut : 1 
+Dégâts % : 0 
+Vitesse : 3 
+Portée : 0 
+Vitesse Attaque : 0 
+Armure : 0
+Temps en jeu ! 206,0597
+
+Fin de la Vague 5 
+Nombre de fragments : 35 
+Player Stats : 
+Vie Max : 20 
+Vie Actuelle : 12,25 
+Dégâts Brut : 1 
+Dégâts % : 0 
+Vitesse : 3 
+Portée : 0 
+Vitesse Attaque : 0 
+Armure : 0,5
+Temps en jeu ! 266,1209
+
+Fin de la Vague 6 
+Nombre de fragments : 42 
+Player Stats : 
+Vie Max : 20 
+Vie Actuelle : 11,75 
+Dégâts Brut : 1 
+Dégâts % : 0 
+Vitesse : 3 
+Portée : 0 
+Vitesse Attaque : 0 
+Armure : 0,5
+Temps en jeu ! 322,1758
+

@@ -11,7 +11,7 @@ public class PlayerInventory : MonoBehaviour
     public int actualWeaponInInventory;
 
     [Header("UI")]
-    public TextMeshProUGUI monsterFragmentsAmount;
+    public TextMeshProUGUI monsterFragmentsAmountText;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -27,9 +27,10 @@ public class PlayerInventory : MonoBehaviour
         }
     }
 
-    public void AddItem()
+    public void AddFragment(int amount)
     {
-
+        monsterFragments += amount;
+        UpdateUIMonsterFragment();
     }
     
     public void WalkOnRessource(int amount)
@@ -40,7 +41,7 @@ public class PlayerInventory : MonoBehaviour
 
     public void UpdateUIMonsterFragment()
     {
-        monsterFragmentsAmount.text = $"{monsterFragments} fragments";
+        monsterFragmentsAmountText.text = $"{monsterFragments} fragments";
     }
 
     public void BuyWithMonsterFragment(int amount)
