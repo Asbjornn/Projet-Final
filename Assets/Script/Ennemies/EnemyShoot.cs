@@ -10,7 +10,7 @@ public class EnemyShoot : MonoBehaviour
     public int damageClose;
     public int damageShoot;
 
-    public state actualState;
+    public State actualState;
 
     [Space(10)]
     [Header("ShootParameters")]
@@ -22,7 +22,7 @@ public class EnemyShoot : MonoBehaviour
     public bool canAttack;
     float chrono;
 
-    public enum state {chase, attack};
+    public enum State {chase, attack};
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -35,7 +35,7 @@ public class EnemyShoot : MonoBehaviour
     {
         if(Vector2.Distance(transform.position, player.position) <= range)
         {
-            actualState = state.attack;
+            actualState = State.attack;
         }
         /*else
         {
@@ -44,11 +44,11 @@ public class EnemyShoot : MonoBehaviour
 
         switch (actualState)
         {
-            case state.chase:
+            case State.chase:
                 canAttack = true;
                 animator.SetBool("Walk", true);
                 break;
-            case state.attack:
+            case State.attack:
                 canAttack = false;
                 animator.SetBool("Walk", false);
                 Attack();
@@ -71,16 +71,17 @@ public class EnemyShoot : MonoBehaviour
         if(chrono > shootInterval)
         {
             animator.SetTrigger("Shoot");
-            GameObject newBullet = Instantiate(enemyBullet, shootPoint.transform.position, shootPoint.transform.rotation);
+            
+            Instantiate(enemyBullet, shootPoint.transform.position, shootPoint.transform.rotation);
             chrono = 0;
 
             if (canAttack)
             {
-                actualState = state.attack;
+                actualState = State.attack;
             }
             else
             {
-                actualState = state.chase;
+                actualState = State.chase;
             }
         }
         else

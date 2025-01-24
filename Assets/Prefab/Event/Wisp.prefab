@@ -131,7 +131,8 @@ MonoBehaviour:
   actualWaypoint: {fileID: 0}
   runner: {fileID: 0}
   spawner: {fileID: 0}
-  lifePoint: 25
+  animator: {fileID: 0}
+  lifePoint: 20
   eventManager: {fileID: 0}
 --- !u!50 &4698256619694763147
 Rigidbody2D:

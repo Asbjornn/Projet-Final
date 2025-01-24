@@ -16,7 +16,7 @@ MonoBehaviour:
   nameItem: Mitrapoulette
   itemEffect: "D\xE9gat : 0.25 \\nPort\xE9e : 6 \\nRecharge : 0.2sec"
   description: PoumPoum rapide
-  price: 25
+  price: 20
   tier: 1
   minReloadTime: 0.1
   itemStats:
@@ -29,3 +29,6 @@ MonoBehaviour:
   - itemType: 1
     statName: 4
     stat: 6
+  - itemType: 1
+    statName: 9
+    stat: 0.5

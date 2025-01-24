@@ -15,6 +15,7 @@ public class Shoot : MonoBehaviour
     public float damageBullet;
     public float range;
     public float reloadTime;
+    public float damageMultiplier;
 
     public bool reload;
 
@@ -42,8 +43,7 @@ public class Shoot : MonoBehaviour
     {
         reload = true;
         GameObject bul = Instantiate(bullet, shootPoint.position, transform.rotation);
-        bul.GetComponent<Damage>().damage = damageBullet + playerStats.damageBrut + (playerStats.damagePercentage / 100);
-        //yield return new WaitForSeconds(Mathf.Max((reloadTime + (playerStats.attackSpeed / 100)), actualWeapon.minReloadTime));
+        bul.GetComponent<Damage>().damage = damageBullet + (playerStats.damageBrut * damageMultiplier) + (playerStats.damagePercentage / 100);
         yield return new WaitForSeconds(Mathf.Clamp(reloadTime + (playerStats.attackSpeed / 100), actualWeapon.minReloadTime, 50));
         if (findNearestEnemy.nearestTarget != null)
         {
@@ -72,6 +72,9 @@ public class Shoot : MonoBehaviour
                 break;
             case "reloadTime":
                 reloadTime = statValue; 
+                break;
+            case "damageMultiplier":
+                damageMultiplier = statValue;
                 break;
             default:
                 break;

@@ -67,10 +67,6 @@ public class PannelShop : MonoBehaviour
 
     public void UpdateShop()
     {
-        // problème, j'ai besoin de créer une liste que chaque boucle utilisera pour piocher un item
-        // cette liste ne peux pas être dans la boucle car sinon 3 sont créées
-        // mais GetRandomItemTier doit être dans la boucle pour choisir un item de tier différrent à chque boucle
-
         itemInShop = new List<Item>(items);
 
         foreach (GameObject pannel in createdPannel)

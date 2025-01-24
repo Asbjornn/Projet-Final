@@ -16,7 +16,7 @@ MonoBehaviour:
   nameItem: Pistolet
   itemEffect: "D\xE9gat : 2 \\nPort\xE9e : 6 \\nRecharge : 1sec"
   description: Flingue simple, mais efficace
-  price: 20
+  price: 15
   tier: 0
   minReloadTime: 0.3
   itemStats:
@@ -29,3 +29,6 @@ MonoBehaviour:
   - itemType: 1
     statName: 4
     stat: 6
+  - itemType: 1
+    statName: 9
+    stat: 1

@@ -48,7 +48,7 @@ public class EventManager : MonoBehaviour
                     break;
                 case 2: //Bonus stat random
                     print("BONUS STAT RANDOM");
-                    textUI.text = "Récompense : Augment 2 statistiques";
+                    textUI.text = "Récompense : Augmente 2 statistiques";
                     textAnimator.SetTrigger("Text");
                     RandomStat();
                     break;
@@ -60,9 +60,9 @@ public class EventManager : MonoBehaviour
                     foreach(GameObject go in spawnerContinuous.enemiesSpawned)
                     {
                         Destroy(go);
-                        spawnerContinuous.enemiesSpawned.Clear();
                         number++;
                     }
+                    spawnerContinuous.enemiesSpawned.Clear();
                     inventory.AddFragment(number);
                     break;
                 default:

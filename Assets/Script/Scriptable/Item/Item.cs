@@ -27,5 +27,5 @@ public class ItemData
 }
 
 public enum ItemType {item, weapon} 
-public enum StatName {maxHealth, damagePercentage, damageBrut, attackSpeed, range, armor, movementSpeed, damageBullet, reloadTime};
+public enum StatName {maxHealth, damagePercentage, damageBrut, attackSpeed, range, armor, movementSpeed, damageBullet, reloadTime, damageMultiplier};
 public enum TierItem {bronze, argent, or, diamant, weapon}
