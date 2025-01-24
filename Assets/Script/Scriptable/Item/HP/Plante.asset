@@ -17,6 +17,7 @@ MonoBehaviour:
   itemEffect: 'Vie max +10 \nVitesse d''attaque : -5%'
   description: 
   price: 15
+  tier: 1
   minReloadTime: 0
   itemStats:
   - itemType: 0

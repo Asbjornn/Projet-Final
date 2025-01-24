@@ -17,6 +17,7 @@ MonoBehaviour:
   itemEffect: "D\xE9g\xE2t +20% \\nArmure -1"
   description: 
   price: 20
+  tier: 2
   minReloadTime: 0
   itemStats:
   - itemType: 0

@@ -9,6 +9,7 @@ public class Item : ScriptableObject
     public string itemEffect;
     public string description;
     public int price;
+    public TierItem tier;
     //public string statName;
     //public float statUI;
     public float minReloadTime;
@@ -20,9 +21,11 @@ public class Item : ScriptableObject
 [System.Serializable]
 public class ItemData
 {
-    public itemType itemType;
-    public statName statName;
+    public ItemType itemType;
+    public StatName statName;
     public float stat;
 }
-public enum statName {maxHealth, damagePercentage, damageBrut, attackSpeed, range, armor, movementSpeed, damageBullet, reloadTime};
-public enum itemType {item, weapon}
+
+public enum ItemType {item, weapon} 
+public enum StatName {maxHealth, damagePercentage, damageBrut, attackSpeed, range, armor, movementSpeed, damageBullet, reloadTime};
+public enum TierItem {bronze, argent, or, diamant, weapon}

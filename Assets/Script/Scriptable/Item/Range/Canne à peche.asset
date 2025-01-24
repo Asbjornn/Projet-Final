@@ -17,6 +17,7 @@ MonoBehaviour:
   itemEffect: "Port\xE9e : +1.5 \\nArmure -1"
   description: "Oui, elle ressemble \xE0 Minecraft !"
   price: 30
+  tier: 3
   minReloadTime: 0
   itemStats:
   - itemType: 0

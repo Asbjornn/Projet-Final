@@ -17,6 +17,7 @@ MonoBehaviour:
   itemEffect: 'Vie max : +15 \nVitesse -1'
   description: Un sandwich comme on en fait plus
   price: 20
+  tier: 2
   minReloadTime: 0
   itemStats:
   - itemType: 0

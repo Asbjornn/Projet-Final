@@ -17,6 +17,7 @@ MonoBehaviour:
   itemEffect: 'Armure : +2 \nVie max -10'
   description: Bouclier aux couleurs chaudes
   price: 30
+  tier: 3
   minReloadTime: 0
   itemStats:
   - itemType: 0

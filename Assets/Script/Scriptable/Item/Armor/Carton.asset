@@ -17,6 +17,7 @@ MonoBehaviour:
   itemEffect: Armure + 0.5
   description: "Carton de d\xE9m\xE9nagement"
   price: 8
+  tier: 0
   minReloadTime: 0
   itemStats:
   - itemType: 0

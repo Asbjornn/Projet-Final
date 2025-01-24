@@ -11,7 +11,7 @@ public class Attractedtoplayer : MonoBehaviour
         if(collision.CompareTag("Player"))
         {
             dir = collision.transform.position;
-            rb.linearVelocity = (dir - transform.position) * speed;
+            rb.linearVelocity = (dir - transform.position).normalized * speed;
             //print("Move");
         }
     }

@@ -26,6 +26,13 @@ public class PannelShop : MonoBehaviour
     public bool canReroll;
     public int priceReroll;
 
+    [Header("List tier")]
+    public List<TierTab> probaItem;
+    public List<WaveProba> wavesProba;
+
+    [Header("Script")]
+    public SpawnerContinuous spawnerContinuous;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -60,18 +67,72 @@ public class PannelShop : MonoBehaviour
 
     public void UpdateShop()
     {
+        // problème, j'ai besoin de créer une liste que chaque boucle utilisera pour piocher un item
+        // cette liste ne peux pas être dans la boucle car sinon 3 sont créées
+        // mais GetRandomItemTier doit être dans la boucle pour choisir un item de tier différrent à chque boucle
+
         itemInShop = new List<Item>(items);
 
         foreach (GameObject pannel in createdPannel)
         {
-            int randomID = Random.Range(0, itemInShop.Count);
             ItemUI itemUI = pannel.GetComponent<ItemUI>();
-            itemUI.choosenItem = itemInShop[randomID];
+
+            itemUI.choosenItem = FilterShop(GetRandomItemTier());
+            itemInShop.Remove(itemUI.choosenItem);
+
             pannel.transform.GetChild(4).GetComponent<Button>().interactable = true;
             pannel.transform.GetChild(4).GetComponent<ReturnItem>().itemPurchased = false;
             itemUI.InitialiseItem();
-            itemInShop.RemoveAt(randomID);
         }
+    }
+
+    public Item FilterShop(TierItem tier)
+    {
+        //créer une nouvelle liste depuis la liste globale
+        //boucle dessus pour stocker seulement les tier voulu dans autre liste
+        //genere un ID random de cette nouvelle liste
+        //retourne cet item
+
+        List<Item> itemByRank = new List<Item>();
+        for (int i = 0; i < itemInShop.Count; i++)
+        {
+            if (itemInShop[i].tier == tier)
+            {
+                itemByRank.Add(itemInShop[i]);
+            }
+        }
+
+        int id = Random.Range(0, itemByRank.Count);
+        return itemByRank[id];
+    }
+
+    public TierItem GetRandomItemTier()
+    {
+        //Prend un nombre random entre 0 et 100
+        //Prend le waveID actuel pour prendre cet id de la liste qui contient les proba de chaque tier de tomber
+        //cumule les proba des tiers de l'id actuel
+        //retourne ce tier
+
+        int rndom = Random.Range(0, 100);
+
+        TierItem randomTier;
+        int cumulateValue = 0;
+        print(wavesProba[spawnerContinuous.waveID].tabs.Count);
+        for (int i = 0; i < wavesProba[spawnerContinuous.waveID].tabs.Count; i++)
+        {
+            print("je passe dans la boucle et le count de la liste = " + wavesProba[spawnerContinuous.waveID].tabs.Count);
+            cumulateValue += wavesProba[spawnerContinuous.waveID].tabs[i].percent;
+            print(cumulateValue + " = cumulate value");
+
+            if (rndom < cumulateValue)
+            {
+                randomTier = wavesProba[spawnerContinuous.waveID].tabs[i].tier;
+                print("me return le tier : " + randomTier);
+                return randomTier;
+            }
+        }
+        print("je return du bronze");
+        return TierItem.bronze;
     }
 
     public void RerollShop()
@@ -153,4 +214,19 @@ public class PannelShop : MonoBehaviour
         //Retire l'argent de mon inventaire
         //Grise l'item pour que ne puis pas le racheter
     }
+}
+
+[System.Serializable]
+public class TierTab
+{
+    public TierItem tier;
+    public int percent;
+}
+
+[System.Serializable]
+public class WaveProba
+{
+    //list de tier "tab" avec chaque proba de tomber
+
+    public List<TierTab> tabs;
 }

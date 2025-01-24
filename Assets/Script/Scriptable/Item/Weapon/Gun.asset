@@ -17,7 +17,8 @@ MonoBehaviour:
   itemEffect: "D\xE9gat : 2 \\nPort\xE9e : 6 \\nRecharge : 1sec"
   description: Flingue simple, mais efficace
   price: 20
-  minReloadTime: 0.2
+  tier: 0
+  minReloadTime: 0.3
   itemStats:
   - itemType: 1
     statName: 7

@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using TMPro;
 
 public class EventManager : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class EventManager : MonoBehaviour
     public PlayerStats playerStats;
     public PlayerHealth health;
     public PlayerInventory inventory;
+    public TextMeshProUGUI textUI;
+    public Animator textAnimator;
     public bool eventStarted;
     public bool claimReward;
 
@@ -15,6 +18,8 @@ public class EventManager : MonoBehaviour
     {
         int randomId = Random.Range(0, prefabEvents.Count);
         Instantiate(prefabEvents[randomId], transform.position, Quaternion.identity, transform);
+        textUI.text = "Évenement : " + prefabEvents[randomId].name;
+        textAnimator.SetTrigger("Text");
     }
 
     public void VictoryEvent()
@@ -29,18 +34,28 @@ public class EventManager : MonoBehaviour
             {
                 case 0: //Bonus HP
                     print("BONUS HP + 25% PV MAX");
-                    health.AddHealth(Mathf.RoundToInt(playerStats.maxHealth * 0.5f));
+                    textUI.text = "Récompenses : Soin de PV";
+                    textAnimator.SetTrigger("Text");
+                    health.AddHealth(Mathf.RoundToInt(playerStats.maxHealth * 0.25f));
+                    print($"Vie gagnée {Mathf.RoundToInt(playerStats.maxHealth * 0.25f)}");
                     break;
                 case 1: //Bonus Fragment x2
                     print("BONUS FRAGMENT X2");
+                    textUI.text = "Récompense : Fragment x2";
+                    textAnimator.SetTrigger("Text");
                     inventory.AddFragment(Mathf.RoundToInt(inventory.monsterFragments * 0.5f));
+                    print($"Fragments gagnées {Mathf.RoundToInt(inventory.monsterFragments * 0.5f)}");
                     break;
                 case 2: //Bonus stat random
                     print("BONUS STAT RANDOM");
+                    textUI.text = "Récompense : Augment 2 statistiques";
+                    textAnimator.SetTrigger("Text");
                     RandomStat();
                     break;
                 case 3: //Tue tous les mobs
                     print("BONUS TUES TT LES MOBS");
+                    textUI.text = "Récompense : Tue tous les monstres";
+                    textAnimator.SetTrigger("Text");
                     int number = 0;
                     foreach(GameObject go in spawnerContinuous.enemiesSpawned)
                     {
@@ -66,7 +81,7 @@ public class EventManager : MonoBehaviour
             {
                 case 0:
                     print("Augmente les HP");
-                    playerStats.maxHealth += playerStats.maxHealth * 0.15f;
+                    playerStats.maxHealth += Mathf.RoundToInt(playerStats.maxHealth * 0.15f);
                     break;
                 case 1:
                     print("Augmente les dgt %");

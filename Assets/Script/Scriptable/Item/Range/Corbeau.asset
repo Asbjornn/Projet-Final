@@ -17,6 +17,7 @@ MonoBehaviour:
   itemEffect: "Port\xE9e +1.5 \\nD\xE9g\xE2t : -10%"
   description: 
   price: 20
+  tier: 2
   minReloadTime: 0
   itemStats:
   - itemType: 0

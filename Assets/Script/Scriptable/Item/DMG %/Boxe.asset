@@ -17,6 +17,7 @@ MonoBehaviour:
   itemEffect: "D\xE9g\xE2ts : +25% \\nPort\xE9e-1"
   description: De quoi mettre des bonnes patates
   price: 30
+  tier: 3
   minReloadTime: 0
   itemStats:
   - itemType: 0

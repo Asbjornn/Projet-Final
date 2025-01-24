@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7579553472794803972}
   - component: {fileID: 7426259207543120460}
   m_Layer: 0
-  m_Name: EventStayInZone
+  m_Name: Reste dans la zone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

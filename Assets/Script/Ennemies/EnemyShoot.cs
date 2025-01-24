@@ -19,7 +19,7 @@ public class EnemyShoot : MonoBehaviour
     public GameObject shootPoint;
     public GameObject enemyBullet;
 
-    public bool canChase;
+    public bool canAttack;
     float chrono;
 
     public enum state {chase, attack};
@@ -37,19 +37,19 @@ public class EnemyShoot : MonoBehaviour
         {
             actualState = state.attack;
         }
-        else
+        /*else
         {
             actualState = state.chase;
-        }
+        }*/
 
         switch (actualState)
         {
             case state.chase:
-                canChase = true;
+                canAttack = true;
                 animator.SetBool("Walk", true);
                 break;
             case state.attack:
-                canChase = false;
+                canAttack = false;
                 animator.SetBool("Walk", false);
                 Attack();
                 break;
@@ -62,6 +62,8 @@ public class EnemyShoot : MonoBehaviour
 
     public void Attack()
     {
+        //
+
         Vector3 direction = player.position - shootPoint.transform.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         shootPoint.transform.rotation = Quaternion.Euler(0, 0, angle);
@@ -71,6 +73,15 @@ public class EnemyShoot : MonoBehaviour
             animator.SetTrigger("Shoot");
             GameObject newBullet = Instantiate(enemyBullet, shootPoint.transform.position, shootPoint.transform.rotation);
             chrono = 0;
+
+            if (canAttack)
+            {
+                actualState = state.attack;
+            }
+            else
+            {
+                actualState = state.chase;
+            }
         }
         else
         {
@@ -93,7 +104,7 @@ public class EnemyShoot : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(canChase)
+        if(canAttack)
         {
             rb.linearVelocity = (player.position - transform.position).normalized * speed;
         }

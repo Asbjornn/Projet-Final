@@ -17,6 +17,7 @@ MonoBehaviour:
   itemEffect: 'Vitesse : +1.5 \n Armure -0.5'
   description: Un seul roller .. pas des plus pratiques
   price: 20
+  tier: 2
   minReloadTime: 0
   itemStats:
   - itemType: 0

@@ -17,6 +17,7 @@ MonoBehaviour:
   itemEffect: "Port\xE9e +1 \\nVie max -5"
   description: 
   price: 15
+  tier: 1
   minReloadTime: 0
   itemStats:
   - itemType: 0

@@ -13,7 +13,7 @@ public class WaveManager : MonoBehaviour
     public List<GameObject> environementNotPicked;
     public List<Waves> waves;
     public List<ListEnemies> enemiesList;
-    [HideInInspector]
+    //[HideInInspector]
     public List<ListEnemies> enemiesAlreadyThere;
 
     [Header("Bool")]
@@ -56,13 +56,11 @@ public class WaveManager : MonoBehaviour
         //pour choisir un aléatoirement parmis les restants
 
         newEnvironement = true;
-        int id = 0;
-        for(id = 0; id < environements.Count; id++)
+        for(int id = 0; id < environements.Count; id++)
         {
             if (environements[id].activeSelf)
             {
                 environements[id].SetActive(false);
-                environementNotPicked.RemoveAt(id);
             }
         }
 
@@ -70,6 +68,7 @@ public class WaveManager : MonoBehaviour
         environementNotPicked[randomID].SetActive(true);
         spawner.enemies = enemiesAlreadyThere[randomID].enemies;
         enemiesAlreadyThere.RemoveAt(randomID);
+        environementNotPicked.RemoveAt(randomID);
     }
 
     public void NextWaveEvent()

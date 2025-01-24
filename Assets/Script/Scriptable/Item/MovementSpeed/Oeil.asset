@@ -17,6 +17,7 @@ MonoBehaviour:
   itemEffect: "Vitesse +1 \\nD\xE9g\xE2t -10%"
   description: 
   price: 15
+  tier: 1
   minReloadTime: 0
   itemStats:
   - itemType: 0

@@ -61,7 +61,7 @@ public class PlayerStats : MonoBehaviour
         maxHealthUI.text = $"Max Health {maxHealth}";
         damagePercentageUI.text = $"Damage {damagePercentage} %";
         damageBrutUI.text = $"Damage Brut {damageBrut}";
-        attackSpeedUI.text = $"Attack Speed {attackSpeed} %";
+        attackSpeedUI.text = $"Attack Speed {attackSpeed * -1} %";
         rangeUI.text = $"Range {range}";
         armorUI.text = $"Armor {armor}";
         movementSpeedUI.text = $"Move Speed {movementSpeed}";
@@ -79,7 +79,7 @@ public class PlayerStats : MonoBehaviour
         switch(statName)
         {
             case "maxHealth":
-                maxHealth += value;
+                //maxHealth += value;
                 if(value > 0)
                 {
                     health.AddHealth(value);

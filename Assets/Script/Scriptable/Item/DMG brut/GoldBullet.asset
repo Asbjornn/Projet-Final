@@ -17,6 +17,7 @@ MonoBehaviour:
   itemEffect: "D\xE9gats : +0.5 \\nArmor -0.5"
   description: "Une balle b\xE9nie qui causera assur\xE9ment plus de d\xE9g\xE2ts"
   price: 15
+  tier: 1
   minReloadTime: 0
   itemStats:
   - itemType: 0

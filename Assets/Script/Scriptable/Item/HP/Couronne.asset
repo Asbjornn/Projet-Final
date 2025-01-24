@@ -17,6 +17,7 @@ MonoBehaviour:
   itemEffect: "Vie max +20 \\nD\xE9g\xE2t -10%"
   description: 
   price: 30
+  tier: 3
   minReloadTime: 0
   itemStats:
   - itemType: 0

@@ -110,6 +110,7 @@ public class EnemyHealth : MonoBehaviour
             animator.SetTrigger("Hurt");
             float amount = collision.gameObject.GetComponent<Damage>().damage;
             currentHealth -= amount;
+            print(gameObject.name + "prend des degts de balles");
         }
     }
 }
