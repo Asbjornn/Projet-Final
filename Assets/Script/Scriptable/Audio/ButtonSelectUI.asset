@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38eaa3e51f5739648b71a0943ca1f394, type: 3}
+  m_Name: ButtonSelectUI
+  m_EditorClassIdentifier: 
+  clip:
+  - {fileID: 8300000, guid: d3f31fc74eaa342c9982984798d00c54, type: 3}
+  - {fileID: 8300000, guid: 01d5ae0cfcbec4c5e81fd5d552af2e84, type: 3}
+  - {fileID: 8300000, guid: b9af7bbd676ec443bb7cee6b03b0240d, type: 3}
+  - {fileID: 8300000, guid: 637d1b221cd934e0e8b74876d47e2609, type: 3}
