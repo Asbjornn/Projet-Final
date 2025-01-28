@@ -3,7 +3,7 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     public float maxHealth;
-    public float currentHealth;
+    public float currentHealthEnemy;
     public Animator animator;
     public GameObject fragment;
     public SpawnerContinuous spawner;
@@ -13,9 +13,9 @@ public class EnemyHealth : MonoBehaviour
     void Start()
     {
         spawner = GameObject.Find("SpawnerManager").GetComponent<SpawnerContinuous>();
-        switch(spawner.waveID)
+        /*switch(spawner.waveID)
         {
-            case <5 :
+            /*case <5 :
                 maxHealth += 0;
                 break;
             case <10:
@@ -27,8 +27,20 @@ public class EnemyHealth : MonoBehaviour
             case <=20:
                 maxHealth += 6;
                 break;
-            /*case 4:
-                maxHealth += 4;
+            case 0:
+                maxHealth += 0;
+                break;
+            case 1:
+                maxHealth += 1;
+                break;
+            case 2:
+                maxHealth += 2;
+                break;
+            case 3:
+                maxHealth += 2;
+                break;
+            case 4:
+                maxHealth += 3;
                 break;
             case 5:
                 maxHealth += 4;
@@ -77,17 +89,17 @@ public class EnemyHealth : MonoBehaviour
                 break;
             case 20:
                 maxHealth += 12;
-                break;*/
+                break;
             default:
                 break;
-        }
-        currentHealth = maxHealth;   
+        }*/
+        currentHealthEnemy = maxHealth + spawner.enemyHpByWaves[spawner.waveID];
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(currentHealth <= 0)
+        if(currentHealthEnemy <= 0)
         {
             EnemyDie(fragmentOnDeath);
         }
@@ -109,7 +121,7 @@ public class EnemyHealth : MonoBehaviour
             Destroy(collision.gameObject);
             animator.SetTrigger("Hurt");
             float amount = collision.gameObject.GetComponent<Damage>().damage;
-            currentHealth -= amount;
+            currentHealthEnemy -= amount;
             print(gameObject.name + "prend des degts de balles");
         }
     }

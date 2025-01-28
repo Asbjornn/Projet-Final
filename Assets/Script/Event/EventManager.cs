@@ -91,7 +91,7 @@ public class EventManager : MonoBehaviour
                     }
                     else
                     {
-                        playerStats.damagePercentage += playerStats.damagePercentage * 0.15f;
+                        playerStats.damagePercentage += Mathf.RoundToInt(playerStats.damagePercentage * 0.15f);
                     }
                     break;
                 case 2:
@@ -102,7 +102,7 @@ public class EventManager : MonoBehaviour
                     }
                     else
                     {
-                        playerStats.damageBrut += playerStats.damageBrut * 0.15f;
+                        playerStats.damageBrut += Mathf.RoundToInt(playerStats.damageBrut * 0.15f);
                     }
                     break;
                 case 3:
@@ -113,7 +113,7 @@ public class EventManager : MonoBehaviour
                     }
                     else
                     {
-                        playerStats.attackSpeed += playerStats.attackSpeed * 0.15f;
+                        playerStats.attackSpeed += Mathf.RoundToInt(playerStats.attackSpeed * 0.15f);
                     }
                         break;
                 case 4:
@@ -124,7 +124,7 @@ public class EventManager : MonoBehaviour
                     }
                     else
                     {
-                        playerStats.range += playerStats.range * 0.15f;
+                        playerStats.range += Mathf.RoundToInt(playerStats.range * 0.15f);
                     }
                     break;
                 case 5:
@@ -135,12 +135,12 @@ public class EventManager : MonoBehaviour
                     }
                     else
                     {
-                        playerStats.armor += playerStats.armor * 0.15f;
+                        playerStats.armor += Mathf.RoundToInt(playerStats.armor * 0.15f);
                     }
                     break;
                 case 6:
                     print("Augmente la vitsse");
-                    playerStats.movementSpeed += playerStats.movementSpeed * 0.15f;
+                    playerStats.movementSpeed += Mathf.RoundToInt(playerStats.movementSpeed * 0.15f);
                     break;
                 default:
                     break;

@@ -22,6 +22,7 @@ public class Shoot : MonoBehaviour
     void Start()
     {
         playerStats = GameObject.Find("Stats").GetComponent<PlayerStats>();
+
         if(actualWeapon != null )
         {
             for (int i = 0; i < actualWeapon.itemStats.Count; i++)

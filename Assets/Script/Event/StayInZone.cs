@@ -10,6 +10,7 @@ public class StayInZone : MonoBehaviour
     public bool inZone;
     public TextMeshProUGUI textTimer;
     public EventManager eventManager;
+    public TextMeshProUGUI textZone;
 
     float elapsedTime = 0f;
 
@@ -62,6 +63,8 @@ public class StayInZone : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             inZone = true;
+            textZone.enabled = false;
+            textTimer.enabled = true;
         }
     }
 
@@ -70,6 +73,8 @@ public class StayInZone : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             inZone = false;
+            textZone.enabled = true;
+            textTimer.enabled = false;
         }
     }
 }

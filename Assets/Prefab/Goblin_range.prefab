@@ -214,7 +214,7 @@ MonoBehaviour:
   shootInterval: 1.5
   shootPoint: {fileID: 9877324182614866}
   enemyBullet: {fileID: 4654212295946150498, guid: deb6acf29e47dcf46a55195dd88f6eb7, type: 3}
-  canChase: 0
+  canAttack: 0
 --- !u!114 &4860225511032590925
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -227,8 +227,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5469a7d3283b39541bed02bc83b4e6b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 4
-  currentHealth: 0
+  maxHealth: 2
+  currentHealthEnemy: 0
   animator: {fileID: 6210906154600637559}
   fragment: {fileID: 2215251955009714210, guid: 005b9f9dbab9ac64ab7c36691987665f, type: 3}
   spawner: {fileID: 0}

@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f04923f04a1928d4e9685ef01c2e8fba, type: 3}
   m_Name: Wave 16
   m_EditorClassIdentifier: 
-  waveInterval: 0.5
+  waveInterval: 0.3
   waveTime: 45

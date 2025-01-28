@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4b76bb7734eb7d4a96b537741f9b418, type: 3}
   m_Name: Rifle
   m_EditorClassIdentifier: 
-  sprite: {fileID: -4801501683559153091, guid: cf27faad390db5a43aad33196b73c5aa, type: 3}
+  sprite: {fileID: 21300000, guid: cf1ea686b0a6bc441803f3d0056e207f, type: 3}
   nameItem: Mitrapoulette
   itemEffect: "D\xE9gat : 0.25 \\nPort\xE9e : 6 \\nRecharge : 0.2sec"
   description: PoumPoum rapide

@@ -19,7 +19,7 @@ public class ReturnItem : MonoBehaviour
     {
         if ((playerInventory.monsterFragments - itemUI.choosenItem.price) >= 0 && !itemPurchased)
         {
-            if(playerInventory.actualWeaponInInventory >= playerInventory.inventoryWeaponMaxSpace && itemUI.choosenItem.itemStats[0].itemType.ToString() == "weapon")
+            if(playerInventory.inventoryWeaponList.Count >= playerInventory.inventoryMaxSize && itemUI.choosenItem.itemStats[0].itemType.ToString() == "weapon")
             {
                 button.interactable = false;
             }

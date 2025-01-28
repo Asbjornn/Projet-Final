@@ -12,6 +12,12 @@ public class FindNearestEnemy : MonoBehaviour
     public float miniDistance;
     float chrono;
 
+    private void Start()
+    {
+        spawnerContinuous = GameObject.Find("SpawnerManager").GetComponent<SpawnerContinuous>();
+        playerStats = GameObject.Find("Stats").GetComponent<PlayerStats>(); 
+    }
+
     // Update is called once per frame
     void Update()
     {

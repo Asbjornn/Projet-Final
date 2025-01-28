@@ -10,9 +10,8 @@ public class Item : ScriptableObject
     public string description;
     public int price;
     public TierItem tier;
-    //public string statName;
-    //public float statUI;
     public float minReloadTime;
+    public GameObject prefabWeapon;
 
     [Header("Data stat")]
     public List<ItemData> itemStats;

@@ -28,6 +28,7 @@ public class SpawnerContinuous : MonoBehaviour
     [Header("List")]
     public List<GameObject> enemies;
     public List<GameObject> enemiesSpawned;
+    public List<int> enemyHpByWaves;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -95,7 +96,7 @@ public class SpawnerContinuous : MonoBehaviour
         //attend la fin de son animation
         //instantie un enemy à cette même position
 
-        Vector2 randomPos = new Vector2(Random.Range(-sizeSpawn.x / 2, sizeSpawn.x / 2), Random.Range(-sizeSpawn.y / 2, sizeSpawn.y / 2));
+        Vector2 randomPos = new(Random.Range(-sizeSpawn.x / 2, sizeSpawn.x / 2), Random.Range(-sizeSpawn.y / 2, sizeSpawn.y / 2));
         GameObject newCross = Instantiate(cross, randomPos, Quaternion.identity);
         yield return new WaitForSeconds(0.83f);
         int randomID = Random.Range(0, enemies.Count - number);

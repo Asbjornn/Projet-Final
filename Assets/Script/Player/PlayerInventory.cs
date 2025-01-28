@@ -1,14 +1,18 @@
 using TMPro;
 using UnityEngine;
+using System.Collections.Generic;
 
 public class PlayerInventory : MonoBehaviour
 {
     public int monsterFragments;
     public Transform weaponContainer;
+    public WeaponContainers weaponContainersScript;
 
     [HideInInspector]
-    public int inventoryWeaponMaxSpace;
     public int actualWeaponInInventory;
+
+    public List<GameObject> inventoryWeaponList;
+    public int inventoryMaxSize;
 
     [Header("UI")]
     public TextMeshProUGUI monsterFragmentsAmountText;
@@ -16,15 +20,9 @@ public class PlayerInventory : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        inventoryWeaponMaxSpace = 0;
         actualWeaponInInventory = 0;
         monsterFragments = 0;
         UpdateUIMonsterFragment();
-
-        for (int i = 0; i < weaponContainer.childCount -1; i++)
-        {
-            inventoryWeaponMaxSpace += 3;
-        }
     }
 
     public void AddFragment(int amount)
@@ -48,5 +46,12 @@ public class PlayerInventory : MonoBehaviour
     {
         monsterFragments -= amount;
         UpdateUIMonsterFragment();
+    }
+
+    public void RemoveWeapon(int id)
+    {
+        Destroy(inventoryWeaponList[id]);
+        inventoryWeaponList.RemoveAt(id);
+        weaponContainersScript.IntervalObject();
     }
 }

@@ -18,7 +18,8 @@ public class PannelShop : MonoBehaviour
     public PlayerInventory playerInventory;
     public PlayerStats playerStats;
     public GameObject weaponContainers;
-    GameObject emptyWeapons;
+    public GameObject weaponPrefab;
+    //GameObject emptyWeapons;
 
     [Header("Reroll")]
     public Button rerollButton;
@@ -32,6 +33,8 @@ public class PannelShop : MonoBehaviour
 
     [Header("Script")]
     public SpawnerContinuous spawnerContinuous;
+    public InventoryUI inventoryUI;
+    public WeaponContainers weaponContainersScript;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -150,32 +153,23 @@ public class PannelShop : MonoBehaviour
     {
         if(playerInventory.monsterFragments - item.price >= 0)
         {
-            Shoot sho = null;
+            Shoot shoot = null;
             bool buyItem = false;
 
             for (int i = 0; i < item.itemStats.Count; i++)
             {
-                if (item.itemStats[i].itemType.ToString() == "weapon" && !buyItem)
+                if (item.itemStats[i].itemType.ToString() == "weapon" && !buyItem && playerInventory.inventoryWeaponList.Count <= playerInventory.inventoryMaxSize)
                 {
+                    print("achète un item");
                     buyItem = true;
-                    for (int y = 0; y < weaponContainers.transform.childCount; y++)
-                    {
-                        if (!weaponContainers.transform.GetChild(y).gameObject.activeSelf)
-                        {
-                            //active l'arme
-                            weaponContainers.transform.GetChild(y).gameObject.SetActive(true);
-                            sho = weaponContainers.transform.GetChild(y).GetComponent<Shoot>();
-                            break;
-                        }
-                        else if(i <= 0)
-                        {
-                            print("plus aucun gameObject désactivé");
-                        }
-                    }
+                    GameObject newWeapon = Instantiate(weaponPrefab, weaponContainers.transform);
+                    shoot = newWeapon.GetComponent<Shoot>();
+                    playerInventory.inventoryWeaponList.Add(newWeapon);
+                    inventoryUI.UpdateWeaponUI(item);
                 }
                 else
                 {
-                    print("l'item n'est pas un weapon");
+                    print("l'item n'est pas un weapon ou plus assez de place");
                 }
 
                 if (item.itemStats[i].itemType.ToString() == "item")
@@ -183,16 +177,17 @@ public class PannelShop : MonoBehaviour
                     //initialise les stats du player
                     playerStats.UpdateStat(item.itemStats[i].statName.ToString(), item.itemStats[i].stat);
 
-                    //enleve les fragment de l'inventaire
-                    //playerInventory.BuyWithMonsterFragment(item.price);
+                    inventoryUI.UpdateItemUI(item);
                 }
                 else if (item.itemStats[i].itemType.ToString() == "weapon" /*&& playerInventory.actualWeaponInInventory <= playerInventory.inventoryWeaponMaxSpace*/)
                 {
                     //initialiser les stats de l'arme
-                    sho.InitializeWeaponData(item.itemStats[i].statName.ToString(), item.itemStats[i].stat, item);
+                    shoot.InitializeWeaponData(item.itemStats[i].statName.ToString(), item.itemStats[i].stat, item);
+
+                    weaponContainersScript.IntervalObject();
 
                     //ajoute 1 dans l'inventaire int
-                    playerInventory.actualWeaponInInventory++;
+                    //playerInventory.actualWeaponInInventory++;
                 }
             }
             //enleve les fragment de l'inventaire
