@@ -19,6 +19,7 @@ MonoBehaviour:
   price: 20
   tier: 1
   minReloadTime: 0.1
+  prefabWeapon: {fileID: 4162373874813158224, guid: aebc3984426211d49b15d62870a1fad6, type: 3}
   itemStats:
   - itemType: 1
     statName: 7

@@ -18,7 +18,7 @@ MonoBehaviour:
   description: 
   price: 35
   tier: 2
-  minReloadTime: 0
+  minReloadTime: 0.05
   prefabWeapon: {fileID: 0}
   itemStats:
   - itemType: 1

@@ -15,10 +15,11 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: bba270c757999db47820e485d01f4c79, type: 3}
   nameItem: Dent
   itemEffect: "D\xE9g\xE2ts +1 \\nVitesse -1"
-  description: 
+  description: "Dent fra\xEEchement extraite, sans trace de carie"
   price: 20
   tier: 2
   minReloadTime: 0
+  prefabWeapon: {fileID: 0}
   itemStats:
   - itemType: 0
     statName: 2

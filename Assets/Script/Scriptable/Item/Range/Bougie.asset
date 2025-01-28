@@ -15,10 +15,11 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: a81819221adf10f449576969930a6695, type: 3}
   nameItem: Bougie
   itemEffect: "Port\xE9e +1 \\nVie max -5"
-  description: 
+  description: "Bougie, lumi\xE8re, vision"
   price: 15
   tier: 1
   minReloadTime: 0
+  prefabWeapon: {fileID: 0}
   itemStats:
   - itemType: 0
     statName: 4

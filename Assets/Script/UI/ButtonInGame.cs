@@ -20,8 +20,10 @@ public class ButtonInGame : MonoBehaviour
         gameObjectUI.SetActive(false);
     }
 
-    public void PlaySound()
+    public void PlaySound(Audio audio)
     {
+        int randomID = Random.Range(0, audio.clip.Count);
+        audioSource.clip  = audio.clip[randomID];
         audioSource.Play();
     }
 

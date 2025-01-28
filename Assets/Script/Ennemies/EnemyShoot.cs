@@ -122,7 +122,7 @@ public class EnemyShoot : MonoBehaviour
             print("je detecte collision");
             PlayerStats stats = GameObject.Find("Stats").GetComponent<PlayerStats>();
             stats.TakeDamage(damageClose);
-            health.EnemyDie(health.fragmentOnDeath);
+            StartCoroutine(health.EnemyDie(health.fragmentOnDeath));
         }
     }
 

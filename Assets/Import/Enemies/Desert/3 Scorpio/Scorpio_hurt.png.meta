@@ -148,9 +148,9 @@ TextureImporter:
         x: 13
         y: 0
         width: 35
-        height: 26
+        height: 25
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -167,12 +167,12 @@ TextureImporter:
       name: Scorpio_hurt_1
       rect:
         serializedVersion: 2
-        x: 61
+        x: 60
         y: 0
-        width: 34
+        width: 35
         height: 25
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -189,7 +189,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: fc25dbd0e58d18947a99d55ae38cc2ad
     internalID: 0
     vertices: []
     indices: 

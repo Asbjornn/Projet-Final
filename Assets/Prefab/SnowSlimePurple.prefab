@@ -135,7 +135,7 @@ CapsuleCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -153,8 +153,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.015306075, y: -0.4999983}
-  m_Size: {x: 1.4795954, y: 0.42857772}
+  m_Offset: {x: -0.005604634, y: -0.7885657}
+  m_Size: {x: 1.5214173, y: 0.3198435}
   m_Direction: 1
 --- !u!1 &7255358994346790358
 GameObject:
@@ -329,12 +329,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5469a7d3283b39541bed02bc83b4e6b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 8
+  maxHealth: 6
   currentHealthEnemy: 0
   animator: {fileID: 2388129478648345552}
   fragment: {fileID: 2215251955009714210, guid: 005b9f9dbab9ac64ab7c36691987665f, type: 3}
   spawner: {fileID: 0}
   fragmentOnDeath: 2
+  audioSource: {fileID: 0}
+  enemy1: {fileID: 667428904352971334}
 --- !u!70 &2215820111128063602
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -369,6 +371,6 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.0000005224531, y: -0.09693905}
-  m_Size: {x: 1.6556166, y: 1.2436346}
+  m_Offset: {x: -0.0000005518675, y: -0.3436852}
+  m_Size: {x: 1.655617, y: 1.2352765}
   m_Direction: 1

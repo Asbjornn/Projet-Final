@@ -48,7 +48,7 @@ CapsuleCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -223,7 +223,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.4166666, y: 1}
+    oldSize: {x: 1.4583334, y: 1.0416666}
     newSize: {x: 1.4166666, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -299,12 +299,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5469a7d3283b39541bed02bc83b4e6b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 8
+  maxHealth: 6
   currentHealthEnemy: 0
   animator: {fileID: 6513977515572309408}
   fragment: {fileID: 2215251955009714210, guid: 005b9f9dbab9ac64ab7c36691987665f, type: 3}
   spawner: {fileID: 0}
   fragmentOnDeath: 2
+  audioSource: {fileID: 0}
+  enemy1: {fileID: 5740569824789173086}
 --- !u!1 &1550826676572610761
 GameObject:
   m_ObjectHideFlags: 0

@@ -15,10 +15,11 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 16cc55efc4410824f90575a6daa773ac, type: 3}
   nameItem: Plante
   itemEffect: 'Vie max +10 \nVitesse d''attaque : -5%'
-  description: 
+  description: "Plante grasse, de quoi oxyg\xE9ner la pi\xE8ce "
   price: 15
   tier: 1
   minReloadTime: 0
+  prefabWeapon: {fileID: 0}
   itemStats:
   - itemType: 0
     statName: 0

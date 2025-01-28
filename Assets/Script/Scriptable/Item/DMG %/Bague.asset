@@ -15,10 +15,11 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 8cf3a81a8024fb449880377273ac00c1, type: 3}
   nameItem: Bague
   itemEffect: "D\xE9g\xE2t +20% \\nArmure -1"
-  description: 
+  description: "La bague de toute beaut\xE9 en or massif"
   price: 20
   tier: 2
   minReloadTime: 0
+  prefabWeapon: {fileID: 0}
   itemStats:
   - itemType: 0
     statName: 1

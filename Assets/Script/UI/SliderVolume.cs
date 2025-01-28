@@ -14,17 +14,19 @@ public class SliderVolume : MonoBehaviour
     private float volumeValue;
     public TextMeshProUGUI textUI;
 
-    private void Start()
+    private void Awake()
     {
         //Debug.Log(PlayerPrefs.GetFloat(KeyName));
         if (PlayerPrefs.HasKey(KeyName))
         {
+            print("a un player pref");
             volumeValue = PlayerPrefs.GetFloat(KeyName);
             mixer.SetFloat(mixerName, volumeValue);
             slider.value = volumeValue;
         }
         else
         {
+            print("n'a pas de player pref");
             PlayerPrefs.SetFloat(KeyName, 1f);
             PlayerPrefs.Save();
             slider.value = slider.maxValue;

@@ -8,6 +8,10 @@ public class Shoot : MonoBehaviour
 
     public GameObject bullet;
     public Transform shootPoint;
+    public KnockBackWeapon knockBackWeapon;
+    public AudioSource audioSource;
+    public Audio audioShoot;
+    //public Animator animator;
 
     [Header("WeaponData")]
     public Item actualWeapon;
@@ -43,6 +47,12 @@ public class Shoot : MonoBehaviour
     public IEnumerator ShootBullet()
     {
         reload = true;
+        knockBackWeapon.StartKnockback();
+
+        audioSource.clip = audioShoot.clip[Random.Range(0, audioShoot.clip.Count)];
+        audioSource.pitch = Random.Range(0.9f, 1.1f);
+        audioSource.Play();
+
         GameObject bul = Instantiate(bullet, shootPoint.position, transform.rotation);
         bul.GetComponent<Damage>().damage = damageBullet + (playerStats.damageBrut * damageMultiplier) + (playerStats.damagePercentage / 100);
         yield return new WaitForSeconds(Mathf.Clamp(reloadTime + (playerStats.attackSpeed / 100), actualWeapon.minReloadTime, 50));

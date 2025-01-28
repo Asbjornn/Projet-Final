@@ -25,8 +25,6 @@ public class WaveManager : MonoBehaviour
     public UnityEvent nextWaveEvent;
     public UnityEvent endGame;
 
-    private string currentEnvironements;
-
     [System.Serializable]
     public class ListEnemies { public List<GameObject> enemies; }
 

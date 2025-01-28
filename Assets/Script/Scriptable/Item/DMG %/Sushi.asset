@@ -15,9 +15,11 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 514cf9a64bd7ae4459ecdc66c43cbc25, type: 3}
   nameItem: Sushi
   itemEffect: "D\xE9g\xE2t +5%"
-  description: 
+  description: Qu'est-ce que c'est boooonnnn
   price: 8
+  tier: 0
   minReloadTime: 0
+  prefabWeapon: {fileID: 0}
   itemStats:
   - itemType: 0
     statName: 1

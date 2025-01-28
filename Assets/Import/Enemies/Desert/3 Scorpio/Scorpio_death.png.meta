@@ -151,12 +151,12 @@ TextureImporter:
       name: Scorpio_death_0
       rect:
         serializedVersion: 2
-        x: 13
+        x: 12
         y: 0
-        width: 34
-        height: 24
+        width: 35
+        height: 25
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -176,9 +176,9 @@ TextureImporter:
         x: 60
         y: 0
         width: 35
-        height: 22
+        height: 25
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -198,9 +198,9 @@ TextureImporter:
         x: 108
         y: 0
         width: 35
-        height: 18
+        height: 25
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -220,9 +220,9 @@ TextureImporter:
         x: 156
         y: 0
         width: 35
-        height: 15
+        height: 25
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -239,7 +239,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 46e9648187a0d3644ba2e0d390aa9324
     internalID: 0
     vertices: []
     indices: 

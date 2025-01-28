@@ -197,12 +197,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5469a7d3283b39541bed02bc83b4e6b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 8
+  maxHealth: 6
   currentHealthEnemy: 0
   animator: {fileID: 3633294795396271661}
   fragment: {fileID: 2215251955009714210, guid: 005b9f9dbab9ac64ab7c36691987665f, type: 3}
   spawner: {fileID: 0}
   fragmentOnDeath: 2
+  audioSource: {fileID: 0}
+  enemy1: {fileID: 1826961812289192041}
 --- !u!95 &3633294795396271661
 Animator:
   serializedVersion: 7
@@ -273,7 +275,7 @@ CapsuleCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2

@@ -15,10 +15,11 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 7688f1ba87e12ef439b0de046193c4be, type: 3}
   nameItem: Oeil
   itemEffect: "Vitesse +1 \\nD\xE9g\xE2t -10%"
-  description: 
+  description: "Un frisson traverse votre \xE9chine"
   price: 15
   tier: 1
   minReloadTime: 0
+  prefabWeapon: {fileID: 0}
   itemStats:
   - itemType: 0
     statName: 6

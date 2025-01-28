@@ -47,7 +47,7 @@ public class FindNearestEnemy : MonoBehaviour
     public Transform FindEnemy()
     {
         Transform target = null;
-        float distance = 0;
+        float distance;
         miniDistance = shoot.range + playerStats.range;
 
         foreach (GameObject enemy in spawnerContinuous.enemiesSpawned)

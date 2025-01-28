@@ -28,6 +28,7 @@ public class SpawnerContinuous : MonoBehaviour
     [Header("List")]
     public List<GameObject> enemies;
     public List<GameObject> enemiesSpawned;
+    public List<GameObject> enemiesCross;
     public List<int> enemyHpByWaves;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -98,10 +99,12 @@ public class SpawnerContinuous : MonoBehaviour
 
         Vector2 randomPos = new(Random.Range(-sizeSpawn.x / 2, sizeSpawn.x / 2), Random.Range(-sizeSpawn.y / 2, sizeSpawn.y / 2));
         GameObject newCross = Instantiate(cross, randomPos, Quaternion.identity);
+        enemiesCross.Add(newCross);
         yield return new WaitForSeconds(0.83f);
         int randomID = Random.Range(0, enemies.Count - number);
         GameObject newEnemy = Instantiate(enemies[randomID], newCross.transform.position, Quaternion.identity);
         enemiesSpawned.Add(newEnemy);
+        enemiesCross.Remove(newEnemy);
         Destroy(newCross);
     }
 
@@ -111,6 +114,8 @@ public class SpawnerContinuous : MonoBehaviour
         //Détruis tous les ennemis restant à la fin
         //Détruis tous les fragments restant à la fin
 
+        StopAllCoroutines();
+
         titleUIPannel.text = $"Vague {waveID + 1} finie";
 
         foreach(GameObject ene in enemiesSpawned)
@@ -118,6 +123,12 @@ public class SpawnerContinuous : MonoBehaviour
             Destroy( ene );
         }
         enemiesSpawned.Clear();
+
+        foreach (GameObject ene in enemiesCross)
+        {
+            Destroy(ene);
+        }
+        enemiesCross.Clear();
 
         fragmentManager.CleanArena();
     }
@@ -146,6 +157,11 @@ public class SpawnerContinuous : MonoBehaviour
                 enemiesSpawned.RemoveAt(i);
             }
         }
+    }
+
+    public void RemoveEnemy(GameObject go)
+    {
+        enemiesSpawned.Remove(go);
     }
 
     private void OnDrawGizmos()

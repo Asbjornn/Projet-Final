@@ -15,10 +15,11 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: f2a0ae930847a694eb2b72f2bd2bca26, type: 3}
   nameItem: "Caf\xE9"
   itemEffect: Vitesse +2 \nVie max -10
-  description: 
+  description: De quoi continuer pendant des heures !!!!!!
   price: 30
   tier: 3
   minReloadTime: 0
+  prefabWeapon: {fileID: 0}
   itemStats:
   - itemType: 0
     statName: 6

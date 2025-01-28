@@ -15,10 +15,11 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 519c525dc3766e041929a0e501aadda2, type: 3}
   nameItem: Parchemin
   itemEffect: "Armure + 1 \\nPort\xE9e -0.5"
-  description: 
+  description: "Parchemin contenant une pose d'auto-d\xE9fence"
   price: 15
   tier: 1
   minReloadTime: 0
+  prefabWeapon: {fileID: 0}
   itemStats:
   - itemType: 0
     statName: 5

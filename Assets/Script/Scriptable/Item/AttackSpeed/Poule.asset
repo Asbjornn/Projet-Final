@@ -15,10 +15,11 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 001fdaac1cb9c784cba04e666c07225a, type: 3}
   nameItem: Poule
   itemEffect: 'Vitesse d''attaque : +20% \nVie max -10'
-  description: 
+  description: "Cot-cot, Cot-cot-cod\xEA\xEA\xEAt"
   price: 30
   tier: 3
   minReloadTime: 0
+  prefabWeapon: {fileID: 0}
   itemStats:
   - itemType: 0
     statName: 3

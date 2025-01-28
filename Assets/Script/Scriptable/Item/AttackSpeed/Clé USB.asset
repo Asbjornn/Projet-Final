@@ -15,10 +15,11 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 02f437aa43b1e6546937aa5b7c28854a, type: 3}
   nameItem: "Cl\xE9 USB"
   itemEffect: 'Vitesse d''attaque : +10% \nVitesse -0.5'
-  description: 
+  description: "T\xE9l\xE9chargement des donn\xE9es d'Usain Bolt ..."
   price: 15
   tier: 1
   minReloadTime: 0
+  prefabWeapon: {fileID: 0}
   itemStats:
   - itemType: 0
     statName: 3

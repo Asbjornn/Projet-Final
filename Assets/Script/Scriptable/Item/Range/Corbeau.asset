@@ -15,10 +15,11 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 1b2d094b32d2cbe4ab4c5ed8e5f7f27a, type: 3}
   nameItem: Corbeau
   itemEffect: "Port\xE9e +1.5 \\nD\xE9g\xE2t : -10%"
-  description: 
+  description: "Ma\xEEtre Corbeau, sur un arbre perch\xE9, Tenait en son bec un fromage."
   price: 20
   tier: 2
   minReloadTime: 0
+  prefabWeapon: {fileID: 0}
   itemStats:
   - itemType: 0
     statName: 4

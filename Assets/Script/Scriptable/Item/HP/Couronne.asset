@@ -15,10 +15,11 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 142059282726b794196a49279c1c7bde, type: 3}
   nameItem: Couronne
   itemEffect: "Vie max +20 \\nD\xE9g\xE2t -10%"
-  description: 
+  description: Couronne rendant l'impossible, possible !
   price: 30
   tier: 3
   minReloadTime: 0
+  prefabWeapon: {fileID: 0}
   itemStats:
   - itemType: 0
     statName: 0

@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
@@ -8,91 +9,14 @@ public class EnemyHealth : MonoBehaviour
     public GameObject fragment;
     public SpawnerContinuous spawner;
     public int fragmentOnDeath;
+    public AudioSource audioSource;
+    public Enemy1 enemy1;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        audioSource = GameObject.Find("AudioHitEnemy").GetComponent<AudioSource>();
         spawner = GameObject.Find("SpawnerManager").GetComponent<SpawnerContinuous>();
-        /*switch(spawner.waveID)
-        {
-            /*case <5 :
-                maxHealth += 0;
-                break;
-            case <10:
-                maxHealth += 2;
-                break;
-            case <15:
-                maxHealth += 4;
-                break;
-            case <=20:
-                maxHealth += 6;
-                break;
-            case 0:
-                maxHealth += 0;
-                break;
-            case 1:
-                maxHealth += 1;
-                break;
-            case 2:
-                maxHealth += 2;
-                break;
-            case 3:
-                maxHealth += 2;
-                break;
-            case 4:
-                maxHealth += 3;
-                break;
-            case 5:
-                maxHealth += 4;
-                break;
-            case 6:
-                maxHealth += 5;
-                break;
-            case 7:
-                maxHealth += 5;
-                break;
-            case 8:
-                maxHealth += 6;
-                break;
-            case 9:
-                maxHealth += 6;
-                break;
-            case 10:
-                maxHealth += 7;
-                break;
-            case 11:
-                maxHealth += 7;
-                break;
-            case 12:
-                maxHealth += 8;
-                break;
-            case 13:
-                maxHealth += 8;
-                break;
-            case 14:
-                maxHealth += 9;
-                break;
-            case 15:
-                maxHealth += 9;
-                break;
-            case 16:
-                maxHealth += 10;
-                break;
-            case 17:
-                maxHealth += 10;
-                break;
-            case 18:
-                maxHealth += 11;
-                break;
-            case 19:
-                maxHealth += 11;
-                break;
-            case 20:
-                maxHealth += 12;
-                break;
-            default:
-                break;
-        }*/
         currentHealthEnemy = maxHealth + spawner.enemyHpByWaves[spawner.waveID];
     }
 
@@ -101,12 +25,16 @@ public class EnemyHealth : MonoBehaviour
     {
         if(currentHealthEnemy <= 0)
         {
-            EnemyDie(fragmentOnDeath);
+            StartCoroutine(EnemyDie(fragmentOnDeath));
         }
     }
 
-    public void EnemyDie(int amount)
+    public IEnumerator EnemyDie(int amount)
     {
+        spawner.RemoveEnemy(gameObject);
+        enemy1.rb.angularVelocity = 0;
+        animator.SetTrigger("Die");
+        yield return new WaitForSeconds(0.7f);
         for(int i = 0; i < amount; i++)
         {
             Instantiate(fragment, transform.position, Quaternion.identity);
@@ -120,6 +48,8 @@ public class EnemyHealth : MonoBehaviour
         {
             Destroy(collision.gameObject);
             animator.SetTrigger("Hurt");
+            audioSource.pitch = Random.Range(0.9f, 1.1f);
+            audioSource.Play();
             float amount = collision.gameObject.GetComponent<Damage>().damage;
             currentHealthEnemy -= amount;
             print(gameObject.name + "prend des degts de balles");

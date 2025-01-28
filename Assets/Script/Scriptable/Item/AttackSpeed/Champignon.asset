@@ -15,10 +15,11 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 68202846ffe75d349964a6882249e37d, type: 3}
   nameItem: Champignon
   itemEffect: "Vitesse d'attaque : +15% \\nD\xE9g\xE2t -10%"
-  description: Champignon qui douteux probablement toxique
+  description: "Champignon qui douteux probablement toxique ou tr\xE8s bon"
   price: 25
   tier: 2
   minReloadTime: 0
+  prefabWeapon: {fileID: 0}
   itemStats:
   - itemType: 0
     statName: 3

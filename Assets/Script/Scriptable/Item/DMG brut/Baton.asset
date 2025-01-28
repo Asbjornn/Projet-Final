@@ -15,9 +15,11 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 6a7f8647e4a859547afa573b93772222, type: 3}
   nameItem: "B\xE2ton"
   itemEffect: "D\xE9g\xE2t +0.25"
-  description: 
+  description: BATON
   price: 8
+  tier: 0
   minReloadTime: 0
+  prefabWeapon: {fileID: 0}
   itemStats:
   - itemType: 0
     statName: 2

@@ -151,12 +151,12 @@ TextureImporter:
       name: Scorpio_walk_0
       rect:
         serializedVersion: 2
-        x: 13
+        x: 12
         y: 0
-        width: 34
-        height: 24
+        width: 35
+        height: 25
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -176,9 +176,9 @@ TextureImporter:
         x: 60
         y: 0
         width: 35
-        height: 23
+        height: 25
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -198,9 +198,9 @@ TextureImporter:
         x: 108
         y: 0
         width: 35
-        height: 23
+        height: 25
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -217,12 +217,12 @@ TextureImporter:
       name: Scorpio_walk_3
       rect:
         serializedVersion: 2
-        x: 157
+        x: 156
         y: 0
-        width: 34
-        height: 24
+        width: 35
+        height: 25
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -239,7 +239,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: a8c3ef5a6db460343bff0b1347041c6f
     internalID: 0
     vertices: []
     indices: 

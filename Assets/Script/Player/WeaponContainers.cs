@@ -20,6 +20,11 @@ public class WeaponContainers : MonoBehaviour
         IntervalObject();
     }
 
+    private void Update()
+    {
+        print(transform.GetChild(0).localPosition);
+    }
+
     public void IntervalObject()
     {
         //Cercle trigonométrique (360 degré ou 2Pi)

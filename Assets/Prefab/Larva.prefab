@@ -168,9 +168,9 @@ GameObject:
   - component: {fileID: 496546736583615375}
   - component: {fileID: 237790965337902723}
   - component: {fileID: 2716824295795013679}
-  - component: {fileID: 1857209301222346984}
   - component: {fileID: 401910847761571092}
   - component: {fileID: 5209131077089848172}
+  - component: {fileID: 2037964726126017410}
   m_Layer: 0
   m_Name: Larva
   m_TagString: Untagged
@@ -299,43 +299,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!70 &1857209301222346984
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1747276185046359326}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: -0.09453728, y: -0.10871774}
-  m_Size: {x: 2.2846818, y: 1.0325807}
-  m_Direction: 1
 --- !u!114 &401910847761571092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -366,9 +329,65 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5469a7d3283b39541bed02bc83b4e6b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 4
+  maxHealth: 2
   currentHealthEnemy: 0
   animator: {fileID: 237790965337902723}
   fragment: {fileID: 2215251955009714210, guid: 005b9f9dbab9ac64ab7c36691987665f, type: 3}
   spawner: {fileID: 0}
   fragmentOnDeath: 1
+  audioSource: {fileID: 0}
+  enemy1: {fileID: 401910847761571092}
+--- !u!60 &2037964726126017410
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1747276185046359326}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.625, y: 1.25}
+    newSize: {x: 2.625, y: 1.25}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.7810559, y: 0.376847}
+      - {x: -1.3125, y: -0.27289057}
+      - {x: -1.2100024, y: -0.6196054}
+      - {x: 1.3125, y: -0.625}
+      - {x: 1.3286833, y: -0.38617784}
+      - {x: 0.8073302, y: 0.16871968}
+      - {x: 0.042380214, y: 0.63039464}
+  m_UseDelaunayMesh: 0
