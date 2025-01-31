@@ -165,6 +165,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerStats: {fileID: 0}
   shoot: {fileID: 8656438082527006766}
+  fire: {fileID: 0}
   spawnerContinuous: {fileID: 0}
   nearestTarget: {fileID: 0}
   rb: {fileID: 980047221704264892}
@@ -177,13 +178,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1914591662724914824}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a7e3800e0b2f72d42872232c4431b154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   knockbackAmount: 0.3
   knockbackDuration: 0.3
+  sprite: {fileID: 8322841886622362815}
 --- !u!50 &980047221704264892
 Rigidbody2D:
   serializedVersion: 5
@@ -224,7 +226,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: b162e0f340d963547a6d656d8e3e7e84, type: 3}
   m_Resource: {fileID: 8300000, guid: b162e0f340d963547a6d656d8e3e7e84, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0

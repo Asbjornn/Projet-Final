@@ -19,10 +19,11 @@ MonoBehaviour:
   price: 30
   tier: 3
   minReloadTime: 0
+  prefabWeapon: {fileID: 0}
   itemStats:
   - itemType: 0
     statName: 5
     stat: 2
   - itemType: 0
     statName: 0
-    stat: -5
+    stat: -10

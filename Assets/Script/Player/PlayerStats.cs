@@ -80,17 +80,11 @@ public class PlayerStats : MonoBehaviour
         {
             case "maxHealth":
                 //maxHealth += value;
-                if(value > 0)
+                print("Augmente les hp");
+                health.AddHealth(value);
+                if (health.healthSlider.value + value > maxHealth)
                 {
-                    health.AddHealth(value);
-                }
-                else if(health.healthSlider.value - value > maxHealth)
-                {
-                    health.healthSlider.value = maxHealth;
-                }
-                else if(health.healthSlider.value - value <= 0)
-                {
-                    maxHealth = 1;
+                    print("Si la vie actuelle + les pv de l'item dépace, reset la value du slider a max hp");
                     health.healthSlider.value = maxHealth;
                 }
                 break;

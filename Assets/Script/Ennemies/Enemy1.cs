@@ -8,10 +8,12 @@ public class Enemy1 : MonoBehaviour
     public SpriteRenderer spriteRenderer;
     public float speed;
     public int damage;
+    public bool isStopped;
 
     void Start()
     {
         player = GameObject.Find("Player").transform;
+        isStopped = false;
     }
 
     private void Update()
@@ -21,7 +23,10 @@ public class Enemy1 : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.linearVelocity = (player.position - transform.position).normalized * speed;
+        if(!isStopped)
+        {
+            rb.linearVelocity = (player.position - transform.position).normalized * speed;
+        }
     }
 
     public void Flip()

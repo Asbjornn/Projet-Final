@@ -13,16 +13,19 @@ public class WeaponContainers : MonoBehaviour
         GameObject firstWeapon = Instantiate(weaponPrefab, transform);
         for (int i = 0; i < startItem.itemStats.Count; i++)
         {
-            firstWeapon.GetComponent<Shoot>().InitializeWeaponData(startItem.itemStats[i].statName.ToString(), startItem.itemStats[i].stat, startItem);
+            if(firstWeapon.GetComponent<Shoot>()!= null)
+            {
+                firstWeapon.GetComponent<Shoot>().InitializeWeaponData(startItem.itemStats[i].statName.ToString(), startItem.itemStats[i].stat, startItem);
+            }
+            else if (firstWeapon.GetComponent<Fire>() != null)
+            {
+                firstWeapon.GetComponent<Fire>().InitializeWeaponData(startItem.itemStats[i].statName.ToString(), startItem.itemStats[i].stat, startItem);
+            }
+            
         }
         playerInventory.inventoryWeaponList.Add(firstWeapon);
         inventoryUI.UpdateWeaponUI(startItem);
         IntervalObject();
-    }
-
-    private void Update()
-    {
-        print(transform.GetChild(0).localPosition);
     }
 
     public void IntervalObject()

@@ -82,6 +82,8 @@ public class PannelShop : MonoBehaviour
             pannel.transform.GetChild(4).GetComponent<Button>().interactable = true;
             pannel.transform.GetChild(4).GetComponent<ReturnItem>().itemPurchased = false;
             itemUI.InitialiseItem();
+            pannel.transform.GetChild(4).GetComponent<ReturnItem>().CheckHPTopBuy();
+            
         }
     }
 
@@ -116,21 +118,21 @@ public class PannelShop : MonoBehaviour
 
         TierItem randomTier;
         int cumulateValue = 0;
-        print(wavesProba[spawnerContinuous.waveID].tabs.Count);
+        //print(wavesProba[spawnerContinuous.waveID].tabs.Count);
         for (int i = 0; i < wavesProba[spawnerContinuous.waveID].tabs.Count; i++)
         {
-            print("je passe dans la boucle et le count de la liste = " + wavesProba[spawnerContinuous.waveID].tabs.Count);
+            //print("je passe dans la boucle et le count de la liste = " + wavesProba[spawnerContinuous.waveID].tabs.Count);
             cumulateValue += wavesProba[spawnerContinuous.waveID].tabs[i].percent;
-            print(cumulateValue + " = cumulate value");
+            //print(cumulateValue + " = cumulate value");
 
             if (rndom < cumulateValue)
             {
                 randomTier = wavesProba[spawnerContinuous.waveID].tabs[i].tier;
-                print("me return le tier : " + randomTier);
+                //print("me return le tier : " + randomTier);
                 return randomTier;
             }
         }
-        print("je return du bronze");
+        //print("je return du bronze");
         return TierItem.bronze;
     }
 
@@ -160,16 +162,12 @@ public class PannelShop : MonoBehaviour
             {
                 if (item.itemStats[i].itemType.ToString() == "weapon" && !buyItem && playerInventory.inventoryWeaponList.Count <= playerInventory.inventoryMaxSize)
                 {
-                    print("achète un item");
+                    //print("achète un item");
                     buyItem = true;
-                    GameObject newWeapon = Instantiate(weaponPrefab, weaponContainers.transform);
+                    GameObject newWeapon = Instantiate(item.prefabWeapon, weaponContainers.transform);
                     shoot = newWeapon.GetComponent<Shoot>();
                     playerInventory.inventoryWeaponList.Add(newWeapon);
                     inventoryUI.UpdateWeaponUI(item);
-                }
-                else
-                {
-                    print("l'item n'est pas un weapon ou plus assez de place");
                 }
 
                 if (item.itemStats[i].itemType.ToString() == "item")

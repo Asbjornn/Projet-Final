@@ -289,10 +289,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 3
   currentHealthEnemy: 0
+  fragmentOnDeath: 1
   animator: {fileID: 4505021794702360585}
   fragment: {fileID: 2215251955009714210, guid: 005b9f9dbab9ac64ab7c36691987665f, type: 3}
+  enemy1: {fileID: 0}
+  enemyShoot: {fileID: 5432491083210681705}
+  col:
+  - {fileID: 5101099298049090851}
+  - {fileID: 3771333078183740466}
   spawner: {fileID: 0}
-  fragmentOnDeath: 1
+  audioSource: {fileID: 0}
 --- !u!1 &5582275906484288376
 GameObject:
   m_ObjectHideFlags: 0

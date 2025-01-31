@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using System.Collections;
 using Unity.VisualScripting;
+using Unity.VisualScripting.FullSerializer;
 
 public class SpawnerContinuous : MonoBehaviour
 {
@@ -24,6 +25,7 @@ public class SpawnerContinuous : MonoBehaviour
     public WaveManager waveManager;
     public FragmentManager fragmentManager;
     public EventManager eventManager;
+    public StatGameEnd statEndScript;
 
     [Header("List")]
     public List<GameObject> enemies;
@@ -162,6 +164,13 @@ public class SpawnerContinuous : MonoBehaviour
     public void RemoveEnemy(GameObject go)
     {
         enemiesSpawned.Remove(go);
+        bool added = false;
+        if (!added)
+        {
+            //print("je suis lue");
+            statEndScript.enemiesNumber++;
+            added = true;
+        }
     }
 
     private void OnDrawGizmos()

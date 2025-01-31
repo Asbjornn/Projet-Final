@@ -7,12 +7,15 @@ public class ReturnItem : MonoBehaviour
     public Button button;
     public PannelShop pannelShop;
     public PlayerInventory playerInventory;
+    public PlayerStats playerStats;
     public bool itemPurchased = false;
+    public bool canBuyItem;
 
     public void Start()
     {
         pannelShop = GameObject.Find("PannelShop").GetComponent<PannelShop>();
         playerInventory = GameObject.Find("Player").GetComponent<PlayerInventory>();
+        playerStats = GameObject.Find("Stats").GetComponent <PlayerStats>();
     }
 
     private void Update()
@@ -23,7 +26,7 @@ public class ReturnItem : MonoBehaviour
             {
                 button.interactable = false;
             }
-            else
+            else if (canBuyItem)
             {
                 button.interactable = true;
             }
@@ -32,7 +35,6 @@ public class ReturnItem : MonoBehaviour
         {
             button.interactable = false;
         }
-
     }
 
     public Item Return()
@@ -44,5 +46,23 @@ public class ReturnItem : MonoBehaviour
     {
         pannelShop.BuyItem(Return(), button);
         itemPurchased = true;
+    }
+
+    public void CheckHPTopBuy()
+    {
+        for (int i = 0; i < itemUI.choosenItem.itemStats.Count; i++)
+        {
+            if (itemUI.choosenItem.itemStats[i].statName.ToString() == "maxHealth")
+            {
+                if (playerStats.currentHealth + itemUI.choosenItem.itemStats[i].stat <= 0)
+                {
+                    canBuyItem = false;
+                }
+                else
+                {
+                    canBuyItem = true;
+                }
+            }
+        }
     }
 }

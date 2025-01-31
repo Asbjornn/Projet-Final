@@ -41,6 +41,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void AddHealth(float amount)
     {
+        print("Modification des hp de " +  amount); 
         stats.maxHealth += amount;
         healthSlider.maxValue = stats.maxHealth;
         stats.currentHealth += amount;

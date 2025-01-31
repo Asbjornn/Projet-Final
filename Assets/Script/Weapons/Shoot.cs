@@ -47,7 +47,7 @@ public class Shoot : MonoBehaviour
     public IEnumerator ShootBullet()
     {
         reload = true;
-        knockBackWeapon.StartKnockback();
+        //knockBackWeapon.StartKnockback();
 
         audioSource.clip = audioShoot.clip[Random.Range(0, audioShoot.clip.Count)];
         audioSource.pitch = Random.Range(0.9f, 1.1f);

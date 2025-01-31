@@ -6,6 +6,7 @@ public class KnockBackWeapon : MonoBehaviour
     public float knockbackDuration = 0.1f; // Durée du recul
     private Vector3 originalPosition; // Position de départ de l'arme
     private float knockbackTime = 0f; // Temps restant pour le recul
+    public SpriteRenderer sprite;
 
     void Start()
     {
@@ -25,6 +26,10 @@ public class KnockBackWeapon : MonoBehaviour
     public void StartKnockback()
     {
         knockbackTime = knockbackDuration;  // Réinitialise le temps de recul
-        transform.localPosition -= transform.right * knockbackAmount;  // Déplace l'arme en arrière
+
+        // Calculer la direction du knockback en prenant en compte le flip
+        Vector3 knockbackDirection = sprite.flipY ? transform.right : -transform.right;
+
+        transform.localPosition += knockbackDirection * knockbackAmount;
     }
 }

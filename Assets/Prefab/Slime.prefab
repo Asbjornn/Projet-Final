@@ -268,6 +268,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 1782842572086529487}
   speed: 1
   damage: 1
+  isStopped: 0
 --- !u!50 &4916847964694976085
 Rigidbody2D:
   serializedVersion: 5
@@ -355,12 +356,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 2
   currentHealthEnemy: 0
+  fragmentOnDeath: 1
   animator: {fileID: 5670165993169725221}
   fragment: {fileID: 2215251955009714210, guid: 005b9f9dbab9ac64ab7c36691987665f, type: 3}
-  spawner: {fileID: 0}
-  fragmentOnDeath: 1
-  audioSource: {fileID: 0}
   enemy1: {fileID: -2484650483386130440}
+  enemyShoot: {fileID: 0}
+  col:
+  - {fileID: 6553504819057447484}
+  - {fileID: 4594302011729143837}
+  spawner: {fileID: 0}
+  audioSource: {fileID: 0}
 --- !u!95 &5670165993169725221
 Animator:
   serializedVersion: 7

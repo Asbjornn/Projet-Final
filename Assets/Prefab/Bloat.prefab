@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 1738063217698657295}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.239, y: 0.542, z: 0}
+  m_LocalPosition: {x: -0.239, y: 0.372, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -63,7 +63,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.20590925, y: -2.3359637, z: 0}
-  m_LocalScale: {x: 0.68, y: 0.68, z: 0.68}
+  m_LocalScale: {x: 1.33, y: 1.33, z: 1.33}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 838601098654379984}
@@ -209,8 +209,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.12673908, y: -0.03727621}
-  m_Size: {x: 0.8076558, y: 1.8004476}
+  m_Offset: {x: -0.026879817, y: -0.0224818}
+  m_Size: {x: 0.6079373, y: 1.2234828}
   m_Direction: 0
 --- !u!114 &3849265949254676346
 MonoBehaviour:
@@ -251,10 +251,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 3
   currentHealthEnemy: 0
+  fragmentOnDeath: 1
   animator: {fileID: 3784411707860187754}
   fragment: {fileID: 2215251955009714210, guid: 005b9f9dbab9ac64ab7c36691987665f, type: 3}
+  enemy1: {fileID: 0}
+  enemyShoot: {fileID: 3849265949254676346}
+  col:
+  - {fileID: 320179232893451550}
+  - {fileID: 3455614941701477333}
   spawner: {fileID: 0}
-  fragmentOnDeath: 1
+  audioSource: {fileID: 0}
 --- !u!1 &8320606389012621290
 GameObject:
   m_ObjectHideFlags: 0
@@ -281,7 +287,7 @@ Transform:
   m_GameObject: {fileID: 8320606389012621290}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.09, y: -0.49, z: 0}
+  m_LocalPosition: {x: -0.031, y: -0.157, z: 0}
   m_LocalScale: {x: 1.35, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -368,7 +374,7 @@ Transform:
   m_GameObject: {fileID: 9169828258001636476}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.059, y: 0.215, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -408,6 +414,6 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.10934429, y: -0.7778297}
-  m_Size: {x: 0.9155152, y: 0.30915192}
+  m_Offset: {x: -0.113042876, y: -0.7519402}
+  m_Size: {x: 0.76018035, y: 0.19819692}
   m_Direction: 1

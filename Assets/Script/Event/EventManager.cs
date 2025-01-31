@@ -13,6 +13,7 @@ public class EventManager : MonoBehaviour
     public Animator textAnimator;
     public bool eventStarted;
     public bool claimReward;
+    public bool winFragmentEvent;
 
     public void RandomEvent()
     {
@@ -33,18 +34,21 @@ public class EventManager : MonoBehaviour
             switch(randomNumber)
             {
                 case 0: //Bonus HP
-                    print("BONUS HP + 25% PV MAX");
+                    print("BONUS HP + 50% PV MAX");
                     textUI.text = "Récompenses : Soin de PV";
                     textAnimator.SetTrigger("Text");
-                    health.AddHealth(Mathf.RoundToInt(playerStats.maxHealth * 0.25f));
-                    print($"Vie gagnée {Mathf.RoundToInt(playerStats.maxHealth * 0.25f)}");
+                    health.AddHealth(Mathf.RoundToInt(playerStats.maxHealth * 0.5f));
+                    print($"Vie gagnée {Mathf.RoundToInt(playerStats.maxHealth * 0.5f)}");
+                    if(playerStats.currentHealth > playerStats.maxHealth)
+                    {
+                        playerStats.currentHealth = playerStats.maxHealth;
+                    }
                     break;
                 case 1: //Bonus Fragment x2
                     print("BONUS FRAGMENT X2");
-                    textUI.text = "Récompense : Fragment x2";
+                    textUI.text = "Récompense : Fragment x2 enfin de vague";
                     textAnimator.SetTrigger("Text");
-                    inventory.AddFragment(Mathf.RoundToInt(inventory.monsterFragments * 0.5f));
-                    print($"Fragments gagnées {Mathf.RoundToInt(inventory.monsterFragments * 0.5f)}");
+                    winFragmentEvent = true;
                     break;
                 case 2: //Bonus stat random
                     print("BONUS STAT RANDOM");
@@ -54,16 +58,7 @@ public class EventManager : MonoBehaviour
                     break;
                 case 3: //Tue tous les mobs
                     print("BONUS TUES TT LES MOBS");
-                    textUI.text = "Récompense : Tue tous les monstres";
-                    textAnimator.SetTrigger("Text");
-                    int number = 0;
-                    foreach(GameObject go in spawnerContinuous.enemiesSpawned)
-                    {
-                        Destroy(go);
-                        number++;
-                    }
-                    spawnerContinuous.enemiesSpawned.Clear();
-                    inventory.AddFragment(number);
+                    KillEvent();
                     break;
                 default:
                     break;
@@ -158,9 +153,47 @@ public class EventManager : MonoBehaviour
         }
     }
 
-    public void resetBoolEvent()
+    public void DoubleFragments()
+    {
+        if (winFragmentEvent)
+        {
+            winFragmentEvent = false;
+
+            inventory.AddFragment(Mathf.RoundToInt(inventory.monsterFragments * 0.5f));
+            print($"Fragments gagnées {Mathf.RoundToInt(inventory.monsterFragments * 0.5f)}");
+        }
+    }
+
+    public void KillEvent()
+    {
+        textUI.text = "Récompense : Tue tous les monstres";
+        textAnimator.SetTrigger("Text");
+        int number = 0;
+
+        List<GameObject> enemiesToKill = new List<GameObject>(spawnerContinuous.enemiesSpawned);
+
+        foreach (GameObject go in enemiesToKill)
+        {
+            if (go != null)
+            {
+                EnemyHealth enemyHealth = go.GetComponent<EnemyHealth>();
+                if (enemyHealth != null)
+                {
+                    enemyHealth.StartCoroutineDie();
+                    number += go.GetComponent<EnemyHealth>().fragmentOnDeath;
+                }
+            }
+        }
+        spawnerContinuous.enemiesSpawned.Clear();
+        enemiesToKill.Clear();  
+
+        inventory.AddFragment(number);
+    }
+
+    public void ResetBoolEvent()
     {
         eventStarted = false;
         claimReward = false;
+        winFragmentEvent = false;
     }
 }

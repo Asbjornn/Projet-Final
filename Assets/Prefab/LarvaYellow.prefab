@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 146131079710692490}
   m_Layer: 0
   m_Name: LarvaYellow
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -197,6 +197,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 6445440108707594225}
   speed: 0.8
   damage: 2
+  isStopped: 0
 --- !u!114 &146131079710692490
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,12 +212,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 6
   currentHealthEnemy: 0
+  fragmentOnDeath: 2
   animator: {fileID: 104286033541438318}
   fragment: {fileID: 2215251955009714210, guid: 005b9f9dbab9ac64ab7c36691987665f, type: 3}
-  spawner: {fileID: 0}
-  fragmentOnDeath: 2
-  audioSource: {fileID: 0}
   enemy1: {fileID: 8199747156376370725}
+  enemyShoot: {fileID: 0}
+  col:
+  - {fileID: 4094254576229925959}
+  - {fileID: 6448735899163583070}
+  spawner: {fileID: 0}
+  audioSource: {fileID: 0}
 --- !u!1 &8356528691383264989
 GameObject:
   m_ObjectHideFlags: 0

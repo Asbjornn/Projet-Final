@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 1539655525782973059}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.63, z: 0}
+  m_LocalPosition: {x: -0.017, y: -0.256, z: 0}
   m_LocalScale: {x: 1.12, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -119,7 +119,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.368631, y: -3.264718, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3214837258178275143}
@@ -265,8 +265,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.03510225, y: -0.18554056}
-  m_Size: {x: 1.1443279, y: 1.8789189}
+  m_Offset: {x: -0.029404104, y: -0.19408798}
+  m_Size: {x: 0.7340561, y: 1.189434}
   m_Direction: 0
 --- !u!114 &4347471909423682126
 MonoBehaviour:
@@ -282,10 +282,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 3
   currentHealthEnemy: 0
+  fragmentOnDeath: 1
   animator: {fileID: 314375457208841098}
   fragment: {fileID: 2215251955009714210, guid: 005b9f9dbab9ac64ab7c36691987665f, type: 3}
+  enemy1: {fileID: 0}
+  enemyShoot: {fileID: 1599024756852321982}
+  col:
+  - {fileID: 4644550736806980910}
+  - {fileID: 911375932450732942}
   spawner: {fileID: 0}
-  fragmentOnDeath: 1
+  audioSource: {fileID: 0}
 --- !u!114 &1599024756852321982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -408,6 +414,6 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.016685065, y: -0.9468386}
-  m_Size: {x: 0.8248234, y: 0.32428768}
+  m_Offset: {x: -0.0024390973, y: -0.62773854}
+  m_Size: {x: 0.63678366, y: 0.22171977}
   m_Direction: 1

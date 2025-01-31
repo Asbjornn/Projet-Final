@@ -14,9 +14,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/UI.unity
     guid: 7f4cd6aa79b787944bbf47d3ebae9b74
-  - enabled: 1
-    path: Assets/Scenes/Disclaimer.unity
-    guid: 3529260d7882dec42801e326f1f8b11c
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

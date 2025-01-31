@@ -7,6 +7,7 @@ public class PlayerInventory : MonoBehaviour
     public int monsterFragments;
     public Transform weaponContainer;
     public WeaponContainers weaponContainersScript;
+    public StatGameEnd statGameScript;
 
     [HideInInspector]
     public int actualWeaponInInventory;
@@ -34,6 +35,7 @@ public class PlayerInventory : MonoBehaviour
     public void WalkOnRessource(int amount)
     {
         monsterFragments += amount;
+        statGameScript.fragmentsCollected += amount;
         UpdateUIMonsterFragment();
     }
 

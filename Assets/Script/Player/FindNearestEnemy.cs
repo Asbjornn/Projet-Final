@@ -4,6 +4,7 @@ public class FindNearestEnemy : MonoBehaviour
 {
     public PlayerStats playerStats;
     public Shoot shoot;
+    public Fire fire;
     public SpawnerContinuous spawnerContinuous;
     public Transform nearestTarget;
     public Rigidbody2D rb;
@@ -48,7 +49,14 @@ public class FindNearestEnemy : MonoBehaviour
     {
         Transform target = null;
         float distance;
-        miniDistance = shoot.range + playerStats.range;
+        if(shoot != null)
+        {
+            miniDistance = shoot.range + playerStats.range;
+        }
+        else if(fire != null)
+        {
+            miniDistance = fire.range + playerStats.range;
+        }
 
         foreach (GameObject enemy in spawnerContinuous.enemiesSpawned)
         {
